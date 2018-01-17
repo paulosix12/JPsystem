@@ -150,17 +150,17 @@
         </div>
         <!-- /#wrapper -->
 
-        <!-- jQuery -->
-        <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
+        <!-- jQuery <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+        <!-- Bootstrap Core JavaScript <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>-->
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script type="text/javascript" src="{{ URL::asset('js/metisMenu.min.js') }}"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script type="text/javascript" src="{{ URL::asset('js/startmin.js') }}"></script>
+        <!-- Metis Menu Plugin JavaScript <script type="text/javascript" src="{{ URL::asset('js/metisMenu.min.js') }}"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript <script type="text/javascript" src="{{ URL::asset('js/startmin.js') }}"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/js/sb-admin-2.min.js"></script>
 
     </body>
 </html>
