@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
         
         <!-- MetisMenu CSS -->
-        <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
         <link href="{{ asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
