@@ -12,11 +12,12 @@
         <!-- Bootstrap Core CSS 
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+        
         <!-- MetisMenu CSS -->
-        <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
-        <link href="{{ asset('css/startmin.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom Fonts -->
         <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -153,16 +154,16 @@
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
-        <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/metisMenu.min.js') }}"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="{{ asset('js/startmin.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/startmin.js') }}"></script>
 
     </body>
 </html>
