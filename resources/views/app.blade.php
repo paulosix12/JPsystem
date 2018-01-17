@@ -13,14 +13,11 @@
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
         
-        <!-- MetisMenu CSS -->
-        <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
-
-        <!-- Custom CSS -->
-        <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
-
-        <!-- Custom Fonts -->
-        <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <!-- Custom CSS <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.css" />
+    
+        <!-- Custom Fonts <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
