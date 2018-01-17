@@ -17,10 +17,10 @@
         <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
-        <link href="{{ asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom Fonts -->
-        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -154,16 +154,16 @@
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
-        <script type="text/javascript" src="{{ asset('js/metisMenu.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/metisMenu.min.js') }}"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script type="text/javascript" src="{{ asset('js/startmin.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/startmin.js') }}"></script>
 
     </body>
 </html>
