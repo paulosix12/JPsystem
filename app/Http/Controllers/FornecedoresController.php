@@ -25,6 +25,7 @@ class FornecedoresController extends Controller
 
     function Visualizar(){
       $fornecedores = fornecedores::simplePaginate(10);
+      dd($fornecedores);
       return view('Fornecedores/verForn')->with('fornecedores', $fornecedores);
     }
 

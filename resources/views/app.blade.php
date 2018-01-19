@@ -13,11 +13,14 @@
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
         
-        <!-- Custom CSS <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">  -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.css" />
-    
-        <!-- Custom Fonts <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <!-- MetisMenu CSS -->
+        <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
+
+        <!-- Custom CSS -->
+        <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
+
+        <!-- Custom Fonts -->
+        <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -150,17 +153,17 @@
         </div>
         <!-- /#wrapper -->
 
-        <!-- jQuery <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
 
-        <!-- Bootstrap Core JavaScript <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>-->
+        <!-- Bootstrap Core JavaScript -->
+        <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
+        <!-- Metis Menu Plugin JavaScript -->
+        <script type="text/javascript" src="{{ URL::asset('js/metisMenu.min.js') }}"></script>
 
-        <!-- Metis Menu Plugin JavaScript <script type="text/javascript" src="{{ URL::asset('js/metisMenu.min.js') }}"></script>-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript <script type="text/javascript" src="{{ URL::asset('js/startmin.js') }}"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/js/sb-admin-2.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script type="text/javascript" src="{{ URL::asset('js/startmin.js') }}"></script>
 
     </body>
 </html>

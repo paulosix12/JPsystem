@@ -17,6 +17,10 @@
                     <label>Selecione o Projeto</label>
                     <input type="text" id="projeto" name="projeto" class="form-control" >                    
                 </div>
+                <div class="col-md-3 mb-3">
+                        <label>Total</label>
+                        <input type="text" id="totalFinal" name="totalFinal" class="form-control" disabled>                    
+                    </div>
                 <table class="table m-0" classe="order-list" id="products-table">
 					<thead>
 						<tr>
@@ -25,7 +29,8 @@
 							<th>Quantidade</th>
                             <th>Valor Unitário</th>
                             <th>IPI(%)</th>
-							<th>Valor Total</th>
+                            <th>Entrega</th>
+                            <th>Valor Total</th>
 						</tr>
 					</thead>
 
@@ -72,6 +77,7 @@ $(document).ready(function () {
         cols += '<td><input type="text" class="form-control" style="width: 120px;"   name="preco[]"/></td>';
         cols += '<td><input type="text" class="form-control" style="width: 120px;"   name="quant[]"/></td>';
         cols += '<td><input type="text" class="form-control" style="width: 120px;"   name="ipi[]" value="0"/></td>/></td>';
+        cols += '<td><select type="text" class="form-control"  style="width: 80px;" name="entrega[]"><option>Imediato</option>@for ($i = 1; $i < 30; $i++)<option>{{$i}}</option>@endfor</select></td>';
         cols += '<td><input type="text" class="form-control total" style="width: 120px;" name="total[]"/></td>';
         cols += '<td><button class="btn btn-danger"><a class="deleteLinha"> Excluir </button></td>';
         newRow.append(cols);
@@ -80,7 +86,7 @@ $(document).ready(function () {
     });
 
     //chamada da função para calcular o total de cada linha
-    $("#products-table").on("blur keyup", 'input[name^="preco"], input[name^="quant"]', function (event) {
+    $("#products-table").on("blur keyup", 'input[name^="preco"], input[name^="quant"] ', function (event) {
         calculateRow($(this).closest("tr"));
     });
     

@@ -10,7 +10,6 @@ use PDF;
 class PedidosController extends Controller{   
   function Novo(){      
     $params = Request::all();
-    
     $collection = collect($params); 
 
     $collection->forget('_token'); // Limpa o _token do CSFR    
@@ -31,11 +30,14 @@ class PedidosController extends Controller{
     $ipi = $collection['ipi'];
     $ipilimpo = implode(',', $ipi);
     
+    $entrega = $collection['entrega'];
+    $entregalimpo = implode(',', $entrega);
+    
     $total = $collection['total'];
     $totallimpo = implode(',', $total);
     
     $pedido = array('clientes' => "$clientes", 'projeto' => "$projeto", 'produto' => "$produtolimpo", 'preco' => "$precolimpo", 'quant' => "$quantlimpo", 'ipi' => "$ipilimpo", 'total' => "$totallimpo" );
-    
+  
     $pedidoFinal = new Pedidos($pedido);
     $pedidoFinal->save();
     return redirect('/Pedidos/Visualizar');
@@ -56,7 +58,8 @@ class PedidosController extends Controller{
     public function pdfdl(){        
       $id = Request::route('id');
       $pedido = Pedidos::where("id_pedido", $id)->firstOrFail();
-      /*
+
+      $projeto = $pedido->projeto;
 
       $produto = $pedido->produto;
       $produtolimpo = explode(',', $produto);
@@ -72,12 +75,10 @@ class PedidosController extends Controller{
       
       $total = $pedido->total;
       $totallimpo = explode(',', $total);
-      
-      dd($totallimpo);
-      //$pedido = array('produto' => "$produtolimpo");
-      //$cliente = ClientesModel::where("cliente", $pedido->clientes)->firstOrFail();
-      */
-      $pdf = PDF::loadView('Documentos/pedidos', array('pedido'=>$pedido));
+
+      $cliente = ClientesModel::where("cliente", $pedido->clientes)->first();
+
+      $pdf = PDF::loadView('Documentos/pedidos', compact('cliente','projeto', 'produtolimpo', 'precolimpo', 'quantlimpo', 'ipilimpo', 'totallimpo'));
       return $pdf->stream('document2.pdf');
       
   }
