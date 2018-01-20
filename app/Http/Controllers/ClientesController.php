@@ -24,15 +24,24 @@ class ClientesController extends Controller
 
     public function Deletar(){
       $id = Request::route('id');
-      $clientes = ClientesModel::where("id_cliente", $id);
+      $clientes = ClientesModel::find($id);
       $clientes->delete();
       return redirect('Clientes/Visualizar');
     }
 
     public function Atualizar(){
       $id = Request::route('id');
-      $clientes = ClientesModel::where("id_cliente", $id)->firstOrFail();
+      $clientes = ClientesModel::where('id',$id)->get();
       return view('Clientes/attClientes')->with('clientes', $clientes);
     }
+
+    function salvaAtualizar(){
+      $id = Request::route('id');
+      $params = Request::all();
+      $clientes = ClientesModel::where('id', $id)->first();
+      $clientes->update($params);
+      return redirect('Clientes/Visualizar');
+  }
+
 
 }

@@ -10,6 +10,7 @@ use PDF;
 class PedidosController extends Controller{   
   function Novo(){      
     $params = Request::all();
+
     $collection = collect($params); 
 
     $collection->forget('_token'); // Limpa o _token do CSFR    
@@ -19,24 +20,28 @@ class PedidosController extends Controller{
     $projeto = $collection['projeto'];
 
     $produto = $collection['produto'];
-    $produtolimpo = implode(',', $produto);
+    $produtolimpo = implode('-', $produto);
 
     $preco = $collection['preco'];
-    $precolimpo = implode(',', $preco);
+    $precolimpo = implode('-', $preco);
+
+    $entrega = $collection['entrega'];
+    $entregalimpo = implode('-', $entrega);
 
     $quant = $collection['quant'];
-    $quantlimpo = implode(',', $quant);
+    $quantlimpo = implode('-', $quant);
 
     $ipi = $collection['ipi'];
-    $ipilimpo = implode(',', $ipi);
+    $ipilimpo = implode('-', $ipi);
     
     $entrega = $collection['entrega'];
-    $entregalimpo = implode(',', $entrega);
+    $entregalimpo = implode('-', $entrega);
     
     $total = $collection['total'];
-    $totallimpo = implode(',', $total);
+    $totallimpo = implode('-', $total);
+       
     
-    $pedido = array('clientes' => "$clientes", 'projeto' => "$projeto", 'produto' => "$produtolimpo", 'preco' => "$precolimpo", 'quant' => "$quantlimpo", 'ipi' => "$ipilimpo", 'total' => "$totallimpo" );
+    $pedido = array('clientes' => "$clientes", 'projeto' => "$projeto", 'produto' => "$produtolimpo", 'preco' => "$precolimpo", 'entrega' => "$entregalimpo", 'quant' => "$quantlimpo", 'ipi' => "$ipilimpo", 'total' => "$totallimpo" );
   
     $pedidoFinal = new Pedidos($pedido);
     $pedidoFinal->save();
@@ -57,30 +62,52 @@ class PedidosController extends Controller{
 
     public function pdfdl(){        
       $id = Request::route('id');
+      $tipo = Request::route('tipo');
       $pedido = Pedidos::where("id_pedido", $id)->firstOrFail();
-
+      
+      $numero = $pedido->id_pedido + 2000;
+      
       $projeto = $pedido->projeto;
 
       $produto = $pedido->produto;
-      $produtolimpo = explode(',', $produto);
+      $produtolimpo = explode('-', $produto);
       
       $preco = $pedido->preco;
-      $precolimpo = explode(',', $preco);
+      $precolimpo = explode('-', $preco);
       
       $quant = $pedido->quant;
-      $quantlimpo = explode(',', $quant);
+      $quantlimpo = explode('-', $quant);
 
       $ipi = $pedido->ipi;
-      $ipilimpo = explode(',', $ipi);
+      $ipilimpo = explode('-', $ipi);
+      
+      $entrega = $pedido->entrega;
+      $entregalimpo = explode('-', $entrega);
       
       $total = $pedido->total;
-      $totallimpo = explode(',', $total);
-
-      $cliente = ClientesModel::where("cliente", $pedido->clientes)->first();
-
-      $pdf = PDF::loadView('Documentos/pedidos', compact('cliente','projeto', 'produtolimpo', 'precolimpo', 'quantlimpo', 'ipilimpo', 'totallimpo'));
-      return $pdf->stream('document2.pdf');
+      $totallimpo = explode('-', $total);
       
+      $loop = count($totallimpo);      
+      /*for($i = 0; $i < $loop; $i++){
+        $totalfinal = $totalfinal + $totallimpo[$loop];
+      } 
+      dd($totalfinal);
+      */$cliente = ClientesModel::where("cliente", $pedido->clientes)->first();
+
+      if($tipo == 1){
+        $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'projeto', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
+        return $pdf->download($projeto . $numero . '.pdf');
+      }
+
+      if($tipo == 2){
+        return view('Documentos/pedidos', compact('cliente', 'projeto', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
+      }
+
+      if($tipo == 3){
+        $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'projeto', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
+        return $pdf->stream('document2.pdf');
+      }
+
   }
 
 }

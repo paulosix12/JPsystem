@@ -21,12 +21,12 @@
   @foreach ($produtos as $p)
   <tbody>
     <tr></button>
-      <td class="text-center">{{ $p->id_produto }}</td>
+      <td class="text-center">{{ $p->id }}</td>
       <td class="text-center">{{ $p->nome_do_produto }}</td>
       <td class="text-center">{{ $p->fornecedor }}</td> 
-      <td class="text-center"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $p->id_produto }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
+      <td class="text-center"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $p->id }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
 Visualizar</button></td>		
-        <div class="modal fade" id="Modal{{ $p->id_produto }}"  role="dialog" >
+        <div class="modal fade" id="Modal{{ $p->id }}"  role="dialog" >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -36,10 +36,8 @@ Visualizar</button></td>
                   </button>
                   </div>
               <div class="modal-body">
-                <p><strong>ID: </strong>{{ $p->id_produto }}</p>
+                <p><strong>ID: </strong>{{ $p->id }}</p>
                 <p><strong>Nome do Produto:</strong> {{ $p->nome_do_produto }}</p>
-                <p><strong>Quantidade:</strong> {{ $p->quantidade }}</p>
-                <p><strong>Valor do Produto:</strong> {{ $p->valor_produto }}</p>
                 <p><strong>Fornecedor:</strong> {{ $p->fornecedor }}</p>
                 <p><strong>Tipo:</strong> {{ $p->tipo }}</p>
                 <p><strong>Descricao:</strong> {{ $p->descricao }}</p>
@@ -48,8 +46,8 @@ Visualizar</button></td>
           </div>
            </div>
         </div>
-      <td class="text-center"><a href="/Clientes/Atualizar/{{ $p->id_produto }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
-      <td class="text-center"><a href="/Clientes/Deletar/{{ $p->id_produto }}" ><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
+      <td class="text-center"><a href="/Produtos/Atualizar/{{ $p->id }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
+      <td class="text-center"><a href="/Produtos/Deletar/{{ $p->id }}" ><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
 Apagar</button></a></td>
     </tr>
   @endforeach

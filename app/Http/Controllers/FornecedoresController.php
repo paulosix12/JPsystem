@@ -25,21 +25,28 @@ class FornecedoresController extends Controller
 
     function Visualizar(){
       $fornecedores = fornecedores::simplePaginate(10);
-      dd($fornecedores);
       return view('Fornecedores/verForn')->with('fornecedores', $fornecedores);
     }
-
+  
     public function Deletar(){
       $id = Request::route('id');
-      $fornecedores = fornecedores::where("id_for", $id);
+      $fornecedores = fornecedores::find($id);
       $fornecedores->delete();
       return redirect('/Fornecedores/Visualizar');     
     }
 
     public function Atualizar(){
       $id = Request::route('id');
-      $fornecedores = fornecedores::where('id_for', $id)->firstOrFail();
-      return view('Fornecedores/attForn')->with('fornecedores', $fornecedores);     
+      $fornecedores = fornecedores::where('id', $id)->get();
+      return view('Fornecedores/attForn', compact('fornecedores'));     
     }
+
+    function salvaAtualizar(){
+      $id = Request::route('id');
+      $params = Request::all();
+      $fornecedores = fornecedores::where('id', $id)->first();
+      $fornecedores->update($params);
+      return redirect('/Fornecedores/Visualizar');
+  }
 
 }

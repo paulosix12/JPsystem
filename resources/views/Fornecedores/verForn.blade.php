@@ -20,12 +20,12 @@
   @foreach ($fornecedores as $c)
   <tbody>
     <tr></button>
-      <td class="text-center">{{ $c->id_for }}</td>
+      <td class="text-center">{{ $c->id }}</td>
       <td class="text-center">{{ $c->fornecedor }}</td>
       <td class="text-center">{{ $c->cidade_for }}</td>
-      <td class="text-center"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $c->id_for }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
+      <td class="text-center"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $c->id }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
 Visualizar</button></td>		
-        <div class="modal fade" id="Modal{{ $c->id_for }}"  role="dialog" >
+        <div class="modal fade" id="Modal{{ $c->id }}"  role="dialog" >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -35,9 +35,8 @@ Visualizar</button></td>
                   </button>
                   </div>
               <div class="modal-body">
-                <p><strong>ID: </strong>{{ $c->id_for }}</p>
+                <p><strong>ID: </strong>{{ $c->id }}</p>
                 <p><strong>Nome da Empresa:</strong> {{ $c->fornecedor }}</p>
-                <p><strong>Razão Social:</strong> {{ $c->razao_social }}</p>
                 <p><strong>Cidade:</strong> {{ $c->cidade_for }}</p>
                 <p><strong>Estado:</strong> {{ $c->estado_for }}</p>
                 <p><strong>CEP:</strong> {{ $c->cep_for }}</p>
@@ -52,8 +51,8 @@ Visualizar</button></td>
           </div>
            </div>
         </div>
-      <td class="text-center"><a href="/Fornecedores/Atualizar/{{ $c->id_for }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
-      <td class="text-center"><a href="/Fornecedores/Deletar/{{ $c->id_for }}" ><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
+      <td class="text-center"><a href="/Fornecedores/Atualizar/{{ $c->id }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
+      <td class="text-center"><a href="/Fornecedores/Deletar/{{ $c->id }}" ><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
 Apagar</button></a></td>
     </tr>
   @endforeach

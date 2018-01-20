@@ -15,11 +15,13 @@
 				<p>CNPJ: 21.733.083./0001-06</p>
 				<p>Fone: (19) 3367-9328 / 19 9 8354-5333</p>
 				<p>www.jpsolutions.com.br</p>
+				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><strong>Orçamento Nº {{ $numero }}</strong></p>
 			</div>
+		</br>
 		<h3>Pedido De Compras</h3>
 		<div class="empresa">
 			<p><strong>Empresa: </strong>{{ $cliente->cliente }}</p>
-			<p><strong>Endereço: </strong> </p>
+			<p><strong>Endereço: </strong>{{ $cliente->endereco }} </p>
 			<p><strong>Projeto: </strong>{{ $projeto }}</p>
 		</div>
 		<div>
@@ -27,35 +29,52 @@
 			<p><strong>Email: </strong> {{ $cliente->email_respon_cliente }}</p>
 			<p><strong>Telefone: </strong> {{ $cliente->telefone_cliente }}</p>
 		</div>
-			<table >
+			<table>
 					<tr>
 						<th>Item</th>
 						<th>Produto</th>
-						<th>Valor(Unidade)</th>
+						<th>Valor(Un)</th>
 						<th>Quantidade</th>
-						<th>Total</th>
+						<th>Total(R$)</th>
 						<th>IPI(%)</th>
 						<th>Entrega</th>
 					</tr>
 					
-						@for ($i = 0; $i < 2; $i++) 
+						@for ($i = 0; $i < $loop; $i++) 
 						<tr>
 						<td>{{  $i  }}</td>
-						<td>{{  $produtolimpo[$i]  }}</td>
+						<td style="width: 250px;">{{  $produtolimpo[$i]  }}</td>
 						<td>{{  $precolimpo[$i]  }}</td>
 						<td>{{  $quantlimpo[$i]  }}</td>
-						<td>{{  $ipilimpo[$i]  }}</td>
-						<td>{{  $totallimpo[$i]  }}</td>
-						</tr>
+						<td>R$ {{  $totallimpo[$i]  }}</td>
+						<td>{{  $ipilimpo[$i]  }}%</td>
+						<td>{{ $entregalimpo[$i] }}</td>
+					</tr>
 						@endfor
 			</table>
+		<br>
+		<div style="width:100%; height:20px;">
+				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><strong>Valor Total: </strong></p>
 		</div>
-		<div class="valor">Valor Total: </div>
+
 			<div>
-				<p class="info">Horario de Recebimento das 8:00 as 16:00 (Exeto Feriado).<strong>Enviar nota fiscas e boletos em XML para financeiro@jpsolucoeseletricas.com.br</strong>				antes da efetivação da entrega, Por gentiza informar em toda as notas fiscais o número do pedido de compra, caso contrario
+				<p class="info" style="width:100%;">Horario de Recebimento das 8:00 as 16:00 (Exeto Feriado).<strong>Enviar nota fiscas e boletos em XML para financeiro@jpsolucoeseletricas.com.br</strong>				antes da efetivação da entrega, Por gentiza informar em toda as notas fiscais o número do pedido de compra, caso contrario
 					o mesmo sera recusado</p>
-
-
+			</div>
+			<br>
+			<br>
+			<div style="float: left; width: 20%; margin-left:0px text-align: left;">
+				<hr style="align:center; width:190px; size:1">
+				<p>Comprador</p>
+			</div>
+			<div style="float: left; width: 20%; margin-left:120px; text-align: left;">
+				<hr style="align:center; width:190px; size:1">
+				<p>Coordenador</p>
+			</div>
+			<div style="float: left; width: 20%; margin-left:120px; text-align: left;">
+				<hr style="align:center; width:190px; size:1">
+				<p>Diretor de Vendas</p>
+			</div>
 	</body>
 	<style>
 		.box1 {
@@ -87,12 +106,12 @@
 		
 
 		table {
-			margin-top: 10px;
+			margin-top: 5px;
 			font-family: arial, sans-serif;
 			text-align: center;
 			border-collapse: collapse;
 			width: 100%;
-			margin-top: 80px;
+			margin-top: 40px;
 		}
 
 		td,
@@ -114,7 +133,8 @@
 
 		info {
 			font-family: arial, sans-serif;
-			text-align: justify;
+			text-align: center;
+			border-style: solid;
 		}
 
 	</style>

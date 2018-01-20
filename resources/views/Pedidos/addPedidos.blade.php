@@ -77,7 +77,7 @@ $(document).ready(function () {
         cols += '<td><input type="text" class="form-control" style="width: 120px;"   name="preco[]"/></td>';
         cols += '<td><input type="text" class="form-control" style="width: 120px;"   name="quant[]"/></td>';
         cols += '<td><input type="text" class="form-control" style="width: 120px;"   name="ipi[]" value="0"/></td>/></td>';
-        cols += '<td><select type="text" class="form-control"  style="width: 80px;" name="entrega[]"><option>Imediato</option>@for ($i = 1; $i < 30; $i++)<option>{{$i}}</option>@endfor</select></td>';
+        cols += '<td><select type="text" class="form-control"  style="width: 80px;" name="entrega[]"><option>Imediato</option>@for ($i = 1; $i < 31; $i++)<option>{{$i}}</option>@endfor</select></td>';
         cols += '<td><input type="text" class="form-control total" style="width: 120px;" name="total[]"/></td>';
         cols += '<td><button class="btn btn-danger"><a class="deleteLinha"> Excluir </button></td>';
         newRow.append(cols);
@@ -105,7 +105,7 @@ function calculateRow(row) {
     //substitui ponto por virgula
     tot=tot.replace(".", ",");
     //a regex abaixo coloca um ponto a esquerda de cada grupo de 3 digitos desde que não seja no inicio do numero
-    row.find('.total').val("R$ " + (tot).replace(/\B(?=(\d{3})+(?!\d))/g, "."));     
+    row.find('.total').val((tot).replace(/\B(?=(\d{3})+(?!\d))/g, "."));     
 }
 
 $( function() {

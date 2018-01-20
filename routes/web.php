@@ -74,7 +74,7 @@ Route::prefix('Pedidos')->group(function () {
     Route::get('Deletar/{id}', 'PedidosController@Deletar');
     Route::get('Atualizar/{id}', 'PedidosController@Atualizar');
     Route::post('Atualizar/{id}', 'PedidosController@salvaAtualizar');
-    Route::get('Download/{id}', 'PedidosController@pdfdl');
+    Route::get('Download/{id}/{tipo}', 'PedidosController@pdfdl');
 });
 
 Route::get('generate-docx', 'HomeController@generateDocx');

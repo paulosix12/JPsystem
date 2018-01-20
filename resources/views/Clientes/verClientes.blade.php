@@ -21,26 +21,25 @@
 					<tbody>
 						<tr>
 							</button>
-							<td class="text-center">{{ $c->id_cliente }}</td>
+							<td class="text-center">{{ $c->id }}</td>
 							<td class="text-center">{{ $c->cliente }}</td>
 							<td class="text-center">{{ $c->cnpj_cliente }}</td>
-							<td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $c->id_cliente }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
+							<td class="text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $c->id }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
 Visualizar</button></td>
-							<div class="modal fade" id="Modal{{ $c->id_cliente }}" role="dialog">
+							<div class="modal fade" id="Modal{{ $c->id }}" role="dialog">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">Dados da Empresa: {{ $c->id_cliente }}</h5>
+											<h5 class="modal-title" id="exampleModalLabel"><stong>Dados da Empresa:</stong> {{ $c->cliente }}</h5>
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">×</span>
                   </button>
 										</div>
 										<div class="modal-body">
-											<p><strong>ID: </strong>{{ $c->id_cliente }}</p>
-											<p><strong>Nome da Empresa:</strong> {{ $c->cliente }}</p>
-											<p><strong>Razão Social:</strong> {{ $c->cidade_cliente }}</p>
-											<p><strong>Cidade:</strong> {{ $c->estado_cliente }}</p>
-											<p><strong>Estado:</strong> {{ $c->cep_cliente }}</p>
+											<p><strong>ID: </strong>{{ $c->id }}</p>
+											<p><strong>Nome da Empresa:</strong> {{ $c->cliente }}</p>	
+											<p><strong>Cidade:</strong> {{ $c->cidade_cliente }}</p>
+											<p><strong>Estado:</strong> {{ $c->estado_cliente }}</p>
 											<p><strong>CEP:</strong> {{ $c->cep_cliente }}</p>
 											<p><strong>Insc Estadual:</strong> {{ $c->insc_municipal_cliente }}</p>
 											<p><strong>Insc Municipal:</strong> {{ $c->insc_estadual_cliente }}</p>
@@ -53,8 +52,8 @@ Visualizar</button></td>
 								</div>
 							</div>
 			</div>
-			<td class="text-center"><a href="/Clientes/Atualizar/{{ $c->id_cliente }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
-			<td class="text-center"><a href="/Clientes/Deletar/{{ $c->id_cliente }}"><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
+			<td class="text-center"><a href="/Clientes/Atualizar/{{ $c->id }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
+			<td class="text-center"><a href="/Clientes/Deletar/{{ $c->id }}"><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
 Apagar</button></a></td>
 			</tr>
 			@endforeach

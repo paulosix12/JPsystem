@@ -9,9 +9,8 @@
 
         <title>JP Solutions</title>
 
-        <!-- Bootstrap Core CSS 
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         
         <!-- MetisMenu CSS -->
         <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
