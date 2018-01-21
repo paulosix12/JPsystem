@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +35,6 @@ Route::prefix('Fornecedores')->group(function () {
 | Rotas Prefixadas Com Produtos
 |--------------------------------------------------------------------------
 */
-
-Route::get('Pedidos/search/autocomplete', ['as' => 'search-autocomplete', 'uses' => 'SearchController@autocomplete']);
 
 Route::get('/', function(){
     return view('index');
@@ -77,7 +79,4 @@ Route::prefix('Pedidos')->group(function () {
     Route::get('Download/{id}/{tipo}', 'PedidosController@pdfdl');
 });
 
-Route::get('generate-docx', 'HomeController@generateDocx');
-$this->get('pdf', 'HomeController@generateDocx')->name('pdf');
-Route::get('/Relatorios', 'RelatoriosController@Visualizar');
-Route::get('/Relatorios/pdf', 'PdfController@generate_pdf');
+

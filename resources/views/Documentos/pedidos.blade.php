@@ -42,7 +42,7 @@
 					
 						@for ($i = 0; $i < $loop; $i++) 
 						<tr>
-						<td>{{  $i  }}</td>
+						<td>{{  $i+1  }}</td>
 						<td style="width: 250px;">{{  $produtolimpo[$i]  }}</td>
 						<td>{{  $precolimpo[$i]  }}</td>
 						<td>{{  $quantlimpo[$i]  }}</td>
@@ -54,7 +54,7 @@
 			</table>
 		<br>
 		<div style="width:100%; height:20px;">
-				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><strong>Valor Total: </strong></p>
+				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><strong>Valor Total: {{ number_format((float)array_sum($totallimpo), 2, '.', '')  }}</strong></p>
 		</div>
 
 			<div>

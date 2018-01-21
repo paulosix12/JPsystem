@@ -10,16 +10,16 @@
         <title>JP Solutions</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/bootstrap.min.css') }}" rel="stylesheet">
         
         <!-- MetisMenu CSS -->
-        <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ secure_asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
-        <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ secure_asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom Fonts -->
-        <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ secure_asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

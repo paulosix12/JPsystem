@@ -87,12 +87,9 @@ class PedidosController extends Controller{
       $total = $pedido->total;
       $totallimpo = explode('-', $total);
       
-      $loop = count($totallimpo);      
-      /*for($i = 0; $i < $loop; $i++){
-        $totalfinal = $totalfinal + $totallimpo[$loop];
-      } 
-      dd($totalfinal);
-      */$cliente = ClientesModel::where("cliente", $pedido->clientes)->first();
+      $loop = count($totallimpo);       
+      
+      $cliente = ClientesModel::where("cliente", $pedido->clientes)->first();
 
       if($tipo == 1){
         $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'projeto', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
@@ -107,7 +104,7 @@ class PedidosController extends Controller{
         $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'projeto', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
         return $pdf->stream('document2.pdf');
       }
-
+    
   }
 
 }
