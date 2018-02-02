@@ -11,8 +11,10 @@
 |
 */
 Auth::routes();
-
+Route::get('/', 'HomeController@dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'Auth\LoginController@logout')->middleware('auth');
+
 
 
 /*
@@ -20,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 | Rotas Prefixadas para o home 
 |--------------------------------------------------------------------------
 */
-Route::prefix('Fornecedores')->group(function () {
+Route::group(['prefix' => 'Fornecedores',  'middleware' => 'auth'], function () {
     Route::post('Adicionar/Novo', 'FornecedoresController@Novo');
     Route::get('Adicionar',  'FornecedoresController@Adicionar');
     Route::get('Visualizar', 'FornecedoresController@Visualizar');
@@ -36,11 +38,7 @@ Route::prefix('Fornecedores')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function(){
-    return view('index');
-});
-
-Route::prefix('Produtos')->group(function () {
+Route::group(['prefix' => 'Produtos',  'middleware' => 'auth'], function () {
     Route::post('Adicionar/Novo', 'ProdutosController@Novo');
     Route::get('Adicionar', 'ProdutosController@Adicionar');
     Route::get('Visualizar', 'ProdutosController@Visualizar');
@@ -54,7 +52,7 @@ Route::prefix('Produtos')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('Clientes')->group(function () {
+Route::group(['prefix' => 'Clientes',  'middleware' => 'auth'], function () {
     Route::post('Adicionar/Novo', 'ClientesController@Novo');
     Route::get('Adicionar', 'ClientesController@Adicionar');
     Route::get('Visualizar', 'ClientesController@Visualizar');
@@ -69,7 +67,7 @@ Route::prefix('Clientes')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('Pedidos')->group(function () {
+Route::group(['prefix' => 'Pedidos',  'middleware' => 'auth'], function () {
     Route::post('Adicionar/Novo', 'PedidosController@Novo');
     Route::get('Adicionar', 'PedidosController@Adicionar');
     Route::get('Visualizar', 'PedidosController@Visualizar');
@@ -79,4 +77,16 @@ Route::prefix('Pedidos')->group(function () {
     Route::get('Download/{id}/{tipo}', 'PedidosController@pdfdl');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Rotas Prefixadas Com Clientes
+|--------------------------------------------------------------------------
+*/
 
+Route::group(['prefix' => 'Relatorios',  'middleware' => 'auth'], function () {
+    Route::get('Visualizar', 'RelatoriosController@Visualizar');
+    Route::post('Clientes', 'RelatoriosController@Clientes');
+    Route::post('Clientes', 'RelatoriosController@Clientes');
+    Route::post('Fornecedor', 'RelatoriosController@Fornecedor');
+    Route::post('Fornecedor', 'RelatoriosController@Fornecedor');
+});

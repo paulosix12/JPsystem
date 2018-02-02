@@ -15,14 +15,14 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('clientes');
-            $table->longText('projeto');
-            $table->longText('produto');
-            $table->longText('preco');
-            $table->longText('quant');
-            $table->longText('ipi');
-            $table->longText('entrega');
-            $table->longText('total');
+            $table->longText('clientes')->nullable();
+            $table->longText('projeto')->nullable();
+            $table->longText('produto')->nullable();
+            $table->longText('preco')->nullable();
+            $table->longText('quant')->nullable();
+            $table->longText('ipi')->nullable();
+            $table->longText('entrega')->nullable();
+            $table->longText('total')->nullable();
             $table->timestamps();
         });
     }

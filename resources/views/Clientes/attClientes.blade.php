@@ -16,6 +16,13 @@
               </div>
               
               <div class="row">
+                  <div class="col-md-12">
+                      <label for="endereco">Endereco</label>
+                      <input type="text" value="{{ $c->endereco }}" id="endereco" name="endereco" class="form-control" required="">
+                    </div>
+                  </div>
+
+              <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cidade">Cidade</label>
                   <input type="text" id="cidade_cliente" value="{{ $c->cidade_cliente }}" name="cidade_cliente" class="form-control">

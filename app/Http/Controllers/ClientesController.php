@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\ClientesModel;
 use Request;
+use Validator;
+use App\Http\Requests\ClienteRequest;
 
 class ClientesController extends Controller
 {
@@ -11,8 +13,8 @@ class ClientesController extends Controller
 		return view('Clientes/addClientes');
     }
 
-    function Novo(){      
-      $params = Request::all();
+    function Novo(ClienteRequest $request){      
+      $params = $request->all();
       $clientes = new ClientesModel($params);
       $clientes->save();
       return redirect('Clientes/Visualizar');

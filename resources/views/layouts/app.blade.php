@@ -15,7 +15,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <a class="navbar-brand" href="#">
+                    <img src="http://jpsolutions.com.br/images/logo_100px.png" width="30" height="25" alt="">
+                </a>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">JP Solutions</a>
+                </div>
+                
             <div class="container">
                 <div class="navbar-header">
 
@@ -29,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        
                     </a>
                 </div>
 

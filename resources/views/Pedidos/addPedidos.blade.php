@@ -103,44 +103,10 @@ function calculateRow(row) {
     //2 casas decimais
     var tot = (preco * quant).toFixed(2);
     //substitui ponto por virgula
-    tot=tot.replace(".", ",");
+    //tot=tot.replace(".", ",");
     //a regex abaixo coloca um ponto a esquerda de cada grupo de 3 digitos desde que não seja no inicio do numero
     row.find('.total').val((tot).replace(/\B(?=(\d{3})+(?!\d))/g, "."));     
 }
 
-$( function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    
-    $("input:text[id^='produto' + 'contador' +]").live("focus.autocomplete", null, function () {
-        $(this).autocomplete({
-            source: availableTags,
-            minLength: 0,
-            delay: 0
-        });
-    });
-  });
 </script>
 @endsection

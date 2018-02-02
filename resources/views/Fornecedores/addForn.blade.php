@@ -4,7 +4,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-
+            @foreach($errors->all() as $error)
+            <div class="alert alert-danger">
+              <ul>
+                <li>{{ $error }}</li>
+              </ul>
+              </div>
+            @endforeach
 
                 <h1 class="page-header">Adicionar Fornecedor</h1>
               <form action="/Fornecedores/Adicionar/Novo" method="POST">
@@ -12,8 +18,8 @@
               <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             
                 <div class="col-md-12 mb-3">
-                  <label for="fornecedor">Fornecedor</label>
-                  <input type="text" id="fornecedor" name="fornecedor" class="form-control" required="">
+                  <label for="fornecedor">Fornecedor <b class="text-danger">*</b></label>
+                  <input type="text" id="fornecedor" name="fornecedor" class="form-control" >
                 </div>
               </div>
               

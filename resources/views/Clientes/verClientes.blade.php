@@ -39,6 +39,7 @@ Visualizar</button></td>
 											<p><strong>ID: </strong>{{ $c->id }}</p>
 											<p><strong>Nome da Empresa:</strong> {{ $c->cliente }}</p>	
 											<p><strong>Cidade:</strong> {{ $c->cidade_cliente }}</p>
+											<p><strong>Endereço:</strong> {{ $c->endereco }}</p>											
 											<p><strong>Estado:</strong> {{ $c->estado_cliente }}</p>
 											<p><strong>CEP:</strong> {{ $c->cep_cliente }}</p>
 											<p><strong>Insc Estadual:</strong> {{ $c->insc_municipal_cliente }}</p>

@@ -10,16 +10,16 @@
         <title>JP Solutions</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="{{ secure_asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         
         <!-- MetisMenu CSS -->
-        <link href="{{ secure_asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/metisMenu.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
-        <link href="{{ secure_asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/startmin.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Custom Fonts -->
-        <link href="{{ secure_asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">JP Solutions</a>
                 </div>
-
+                
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -49,22 +49,27 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                    <li><a href="/"><i class="fa fa-home fa-fw"></i> Dashboard</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> JP Solutions <b class="caret"></b>
+                            <i class="fa fa-user fa-fw"></i> {{ Auth::user()->name }} <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+
+
                         </ul>
                     </li>
                 </ul>
@@ -131,9 +136,20 @@
                                 </ul>
                             </li>
                             
+                <!-- Pedidos Menu -->
+                <li>
+                    <a href="#"><i class="fa fa-pencil-square-o  fa-fw"></i> Relatorios<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/Relatorios/Visualizar">Visualizar</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                        
                 <!-- BUG Report -->
                             <li>
-                                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Bug Report</a>
+                                <a href="forms.html"><i class="fa-bug fa-fw"></i> Bug Report</a>
                             </li>
 
 

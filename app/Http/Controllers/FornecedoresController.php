@@ -6,6 +6,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
+use Validator;
+use App\Http\Requests\FornecedoresRequest;
 use App\fornecedores;
 use Request;
 
@@ -15,12 +17,11 @@ class FornecedoresController extends Controller
 		return view('Fornecedores/addForn');
     }
 
-    function Novo(){      
-      $params = Request::all();
+    function Novo(FornecedoresRequest $request){      
+      $params = $request->all();
       $fornecedores = new fornecedores($params);
       $fornecedores->save();
       return redirect('/Fornecedores/Visualizar');
-         
     }
 
     function Visualizar(){

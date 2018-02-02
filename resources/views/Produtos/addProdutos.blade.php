@@ -4,7 +4,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-
+            @foreach($errors->all() as $error)
+            <div class="alert alert-danger">
+              <ul>
+                <li>{{ $error }}</li>
+              </ul>
+              </div>
+            @endforeach
 
                 <h1 class="page-header">Adicionar Produto</h1>
               <form action="/Produtos/Adicionar/Novo" method="POST">
@@ -12,8 +18,8 @@
               <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             
                 <div class="col-md-6 mb-3">
-                  <label >Nome do Produto</label>
-                  <input type="text" id="nome_do_produto" name="nome_do_produto" class="form-control" required="">
+                  <label >Nome do Produto <b class="text-danger">*</b></label>
+                  <input type="text" id="nome_do_produto" name="nome_do_produto" class="form-control">
                 </div>
             
 
@@ -22,7 +28,7 @@
                 <select class="form-control" name="fornecedor" >
                 <option value="">Selecione o Fornecedor</option>
                 @foreach ($fornecedores as $f)
-                <option value="{{ $f->id }}">{{ $f->fornecedor }}</option>
+                <option value="{{ $f->fornecedor }}">{{ $f->fornecedor }}</option>
                 @endforeach
               </select>                  
               </div>
@@ -34,6 +40,8 @@
               <option  value="">Selecione um Tipo</option>
               <option  value="Elétrico">Elétrico</option>
               <option  value="Mecanico">Mecanico</option>
+              <option  value="Pneumatico">Pneumatico</option>
+              <option  value="Mecanico">Outros</option>
             </select>                  
             </div>
 
@@ -41,7 +49,7 @@
               <div class="row">
                 <div class="col-md-12 mb-3">
                   <label for="validationDefault03">Descrição do Produto</label>
-                  <textarea type="text" id="descricao" name="descricao" class="form-control" id="validationDefault03" required=""></textarea>
+                  <textarea type="text" id="descricao" name="descricao" class="form-control" id="validationDefault03"></textarea>
                 </div>
               </div>
 

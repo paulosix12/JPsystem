@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\ProdutoRequest;
 use App\fornecedores;
 use App\produtos;
 use Request;
+use Validator;
 
 class ProdutosController extends Controller
 {
@@ -12,8 +14,8 @@ class ProdutosController extends Controller
 	    return view('Produtos/addProdutos')->with('fornecedores', $fornecedores);
     }
 
-    function Novo(){
-        $params = Request::all();
+    function Novo(ProdutoRequest $request){
+        $params = $request->all();
         $produtos = new produtos($params);
         $produtos->save();
         return redirect('Produtos/Visualizar');
@@ -21,7 +23,6 @@ class ProdutosController extends Controller
 
     function Visualizar(){
         $produtos = produtos::simplePaginate(10);
-        
         return view('Produtos/verProdutos')->with('produtos', $produtos);
     }
 
