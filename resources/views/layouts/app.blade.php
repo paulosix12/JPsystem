@@ -16,11 +16,11 @@
 <body>
     <div id="app">
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="http://jpsolutions.com.br/images/logo_100px.png" width="30" height="25" alt="">
                 </a>
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">JP Solutions</a>
+                    <a class="navbar-brand" href="/login">JP Solutions</a>
                 </div>
                 
             <div class="container">
@@ -35,7 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="/login">
                         
                     </a>
                 </div>
@@ -50,8 +50,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Entrar</a></li>
+                            <li><a href="{{ route('register') }}">Registrar-se</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -63,7 +63,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Sair
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

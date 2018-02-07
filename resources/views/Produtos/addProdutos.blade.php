@@ -52,7 +52,8 @@
                   <textarea type="text" id="descricao" name="descricao" class="form-control" id="validationDefault03"></textarea>
                 </div>
               </div>
-
+            </br>
+            </br>
             <button class="btn btn-primary" type="submit">Salvar</button>   <a href="/"><button class="btn btn-default" type="submit">Cancelar</a></button>
             </form>
             
