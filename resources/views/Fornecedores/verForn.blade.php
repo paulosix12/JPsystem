@@ -20,16 +20,16 @@
   @foreach ($fornecedores as $c)
   <tbody>
     <tr></button>
-      <td class="text-center">{{ $c->id }}</td>
-      <td class="text-center">{{ $c->fornecedor }}</td>
-      <td class="text-center">{{ $c->cidade_for }}</td>
+      <td class="text-center">{{ str_limit($c->id, 3) }}</td>
+      <td class="text-center">{{ str_limit($c->fornecedor, 15) }}</td>
+      <td class="text-center">{{ str_limit($c->cidade_for, 15) }}</td>
       <td class="text-center"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $c->id }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
 Visualizar</button></td>		
         <div class="modal fade" id="Modal{{ $c->id }}"  role="dialog" >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Dados do Fornecedor: {{ $c->fornecedor }}</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Dados do Fornecedor:</strong> {{ $c->fornecedor }}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">×</span>
                   </button>

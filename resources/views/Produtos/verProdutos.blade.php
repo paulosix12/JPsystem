@@ -4,7 +4,7 @@
   <div class="container-fluid">
       <div class="row">
           <div class="col-lg-12">
-              <h1 class="page-header">Produtos Cadastrados</h1>
+              <h1 class="page-header">Produtos Cadastrados</h1> 
 <table class="table table-striped ">
   <thead>
     <tr>  
@@ -20,8 +20,8 @@
   <tbody>
     <tr></button>
       <td class="text-center">{{ $p->id }}</td>
-      <td class="text-center">{{ $p->nome_do_produto }}</td>
-      <td class="text-center">{{ $p->fornecedor }}</td> 
+      <td class="text-center">{{ str_limit($p->nome_do_produto, 30) }}</td>
+      <td class="text-center">{{ str_limit($p->fornecedor, 30) }}</td> 
       <td class="text-center"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ $p->id }}" data-whatever="@mdo"><i class="fa fa-search-plus" aria-hidden="true"></i>
 Visualizar</button></td>		
         <div class="modal fade" id="Modal{{ $p->id }}"  role="dialog" >

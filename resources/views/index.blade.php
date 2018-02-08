@@ -102,7 +102,15 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Correções</div>
+                        <div class="panel-body">
+                            <li>Versão 1.1 (Stable)</li>
+                            <li>Correção no sistema de cálculo [FINALIZADO]</li>
+                            <li>Tradução do sistema de login [FINALIZADO]</li>
+                            <li>Edição dos pedido [ANDAMENTO]</li>  
+                        </div>
+                        </div>
 
             </div>
             <!-- /.col-lg-12 -->

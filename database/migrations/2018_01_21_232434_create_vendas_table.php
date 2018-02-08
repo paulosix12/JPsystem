@@ -27,6 +27,7 @@ class CreateVendasTable extends Migration
             $table->string('ipi')->nullable();
             $table->string('total')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
