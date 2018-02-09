@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'JPsystem') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,7 +16,7 @@
 <body>
     <div id="app">
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="/login">
                     <img src="http://jpsolutions.com.br/images/logo_100px.png" width="30" height="25" alt="">
                 </a>
                 <div class="navbar-header">
@@ -27,6 +27,7 @@
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
+                    
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>

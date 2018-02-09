@@ -23,7 +23,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+                                    <a href="/Pedidos/Visualizar">
                                         <div class="panel-footer">
                                             <span class="pull-left">Ver Detalhes</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -45,7 +45,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+                                    <a href="/Fornecedores/Visualizar">
                                         <div class="panel-footer">
                                             <span class="pull-left">Ver Detalhes</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -68,7 +68,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+                                    <a href="/Produtos/Visualizar">
                                         <div class="panel-footer">
                                             <span class="pull-left">Ver Detalhes</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -91,7 +91,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
+                                    <a href="/Clientes/Visualizar">
                                         <div class="panel-footer">
                                             <span class="pull-left">Ver Detalhes</span>
                                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -105,10 +105,12 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">Correções</div>
                         <div class="panel-body">
-                            <li>Versão 1.1 (Stable)</li>
+                            <li>Versão 1.3 (Beta)</li>
                             <li>Correção no sistema de cálculo [FINALIZADO]</li>
                             <li>Tradução do sistema de login [FINALIZADO]</li>
-                            <li>Edição dos pedido [ANDAMENTO]</li>  
+                            <li>Correção dos link Ver Detalhes [FINALIZADO]</li>
+                            <li>Edição dos pedido [ANDAMENTO]</li>
+                            <li>Enviar PDF via email [ANDAMENTO]</li>  
                         </div>
                         </div>
 

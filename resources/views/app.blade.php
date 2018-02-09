@@ -34,11 +34,11 @@
 
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="http://jpsolutions.com.br/images/logo_100px.png" width="30" height="25" alt="">
                   </a>
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">JP Solutions</a>
+                    <a class="navbar-brand" href="/">JP Solutions</a>
                 </div>
                 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
