@@ -14,6 +14,13 @@
                 <input type="text" id="fornecedor" value="{{ $f->fornecedor }}" name="fornecedor" class="form-control">
               </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="endereco">Endereco <b class="text-danger">*</b></label>
+                    <input type="text" id="endereco"  value="{{ $f->endereco }}" name="endereco" class="form-control" >
+                  </div>
+                </div>
             
             <div class="row">
               <div class="col-md-6 mb-3">

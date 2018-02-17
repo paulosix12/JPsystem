@@ -37,7 +37,8 @@ Visualizar</button></td>
               <div class="modal-body">
                 <p><strong>ID: </strong>{{ $c->id }}</p>
                 <p><strong>Nome da Empresa:</strong> {{ $c->fornecedor }}</p>
-                <p><strong>Cidade:</strong> {{ $c->cidade_for }}</p>
+                <p><strong>Cidade:</strong> {{ $c->endereco }}</p>
+                <p><strong>Endereço:</strong> {{ $c->cidade_for }}</p>
                 <p><strong>Estado:</strong> {{ $c->estado_for }}</p>
                 <p><strong>CEP:</strong> {{ $c->cep_for }}</p>
                 <p><strong>Insc Estadual:</strong> {{ $c->insc_municipal_for }}</p>

@@ -15,63 +15,78 @@
 				<p>CNPJ: 21.733.083./0001-06</p>
 				<p>Fone: (19) 3367-9328 / 19 9 8354-5333</p>
 				<p>www.jpsolutions.com.br</p>
-				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><strong>Orçamento Nº {{ $numero }}</strong></p>
+				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><b>Orçamento Nº {{ $numero }}</b></p>
 			</div>
-		</br>
-		<h3>Pedido De Compras</h3>
-		<div class="empresa">
-			<p><strong>Empresa: </strong>{{ $cliente->cliente }}</p>
-			<p><strong>Endereço: </strong>{{ $cliente->endereco }} </p>
-			<p><strong>Projeto: </strong>{{ $projeto }}</p>
-		</div>
-		<div>
-			<p><strong>Contato: </strong> {{ $cliente->nome_responsavel_cliente }}</p>
-			<p><strong>Email: </strong> {{ $cliente->email_respon_cliente }}</p>
-			<p><strong>Telefone: </strong> {{ $cliente->telefone_cliente }}</p>
-		</div>
-			<table>
-					<tr>
-						<th>Item</th>
-						<th>Produto</th>
-						<th>Valor(Un)</th>
-						<th>Quantidade</th>
-						<th>Total(R$)</th>
-						<th>IPI(%)</th>
-						<th>Entrega (Dias)</th>
-					</tr>
-					
-						@for ($i = 0; $i < $loop; $i++) 
+
+			<h3>Pedido De Compras</h3>
+			<h2 style="display:inline; font-size: 18px;">Cliente: {{ $cliente->cliente }}</h2>
+			<hr>
+			<div class="empresa">
+				<p><strong>Endereço: </strong>{{ $cliente->endereco }} </p>
+				<p><strong>Projeto: </strong>{{ $projeto }}</p>
+			</div>
+			<div>
+				<p><strong>Contato: </strong> {{ $cliente->nome_responsavel_cliente }}</p>
+				<p><strong>Email: </strong> {{ $cliente->email_respon_cliente }}</p>
+				<p><strong>Telefone: </strong> {{ $cliente->telefone_cliente }}</p>
+			</div>
+			
+			<h2 style="display:inline; font-size: 18px;">Fornecedor: {{ $fornecedor->fornecedor}}</h2>
+			<hr>
+			<div class="empresa">
+				<p><strong>Endereço: </strong>{{ $fornecedor->endereco}}</p>
+				<p><strong>Cidade: </strong>{{ $fornecedor->cidade_for}}</p>
+				</div>
+			<div>
+				<p><strong>Contato: </strong> {{ $fornecedor->nome_responsavel_for}} </p>
+				<p><strong>Email: </strong>  {{ $fornecedor->email_respons_for}} </p>
+				<p><strong>Telefone: </strong> {{$fornecedor->telefone_for }} <p>
+			</div>
+				<table>
 						<tr>
-						<td>{{  $i+1  }}</td>
-						<td style="width: 250px;">{{  $produtolimpo[$i]  }}</td>
-						<td>{{  $precolimpo[$i]  }}</td>
-						<td>{{  $quantlimpo[$i]  }}</td>
-						<td>R$ {{  $totallimpo[$i]  }}</td>
-						<td>{{  $ipilimpo[$i]  }}%</td>
-						<td>{{ $entregalimpo[$i] }}</td>
-					</tr>
-						@endfor
-			</table>
-		<br>
+							<th>Item</th>
+							<th>Produto</th>
+							<th>Valor(Un)</th>
+							<th>Quantidade</th>
+							<th>Total(R$)</th>
+							<th>IPI(%)</th>
+							<th>Entrega (Dias)</th>
+						</tr>
+						
+							@for ($i = 0; $i < $loop; $i++) 
+							<tr>
+							<td>{{  $i+1  }}</td>
+							<td style="width: 250px;">{{  $produtolimpo[$i]  }}</td>
+							<td>{{  $precolimpo[$i]  }}</td>
+							<td>{{  $quantlimpo[$i]  }}</td>
+							<td>R$ {{  $totallimpo[$i]  }}</td>
+							<td>{{  $ipilimpo[$i]  }}%</td>
+							<td>{{ $entregalimpo[$i] }}</td>
+						</tr>
+							@endfor
+				</table>
+		<div style="width:100%; height:20px; float:left;">
+				<p><b>Forma de Pagamento: {{ $pagamento }}</p>
+				<p>Condicão de Pagamento:{{ $condicao }}</p>
+		</div>
 		<div style="width:100%; height:20px;">
-				<p style="text-align: center; width:200px; float:right;  border-style: solid;"><strong>Valor Total: {{ number_format((float)array_sum($totallimpo), 2, '.', '') }} R$</strong></p>
+				<h4 style="text-align: center; width:200px; float:right;  border-style: solid;"><b>Valor Total:</b> {{ number_format((float)array_sum($totallimpo), 2, '.', '') }} R$</h4>
 		</div>
 
 			<div>
-				<p class="info" style="width:100%;">Horario de Recebimento das 8:00 as 16:00 (Exeto Feriado).<strong>Enviar nota fiscas e boletos em XML para financeiro@jpsolucoeseletricas.com.br</strong>				antes da efetivação da entrega, Por gentiza informar em toda as notas fiscais o número do pedido de compra, caso contrario
+				<p class="info" style="width:100%;">Horario de Recebimento das 8:00 as 16:00 (Exeto Feriado).<b> Enviar nota fiscas e boletos em XML para financeiro@jpsolucoeseletricas.com.br</b> antes da efetivação da entrega, Por gentiza informar em toda as notas fiscais o número do pedido de compra, caso contrario
 					o mesmo sera recusado</p>
 			</div>
-			<br>
-			<br>
-			<div style="float: left; width: 20%; margin-left:0px text-align: left;">
+		
+			<div style="float: left; width: 20%; padding-top:25px; margin-left:0px text-align: left;">
 				<hr style="align:center; width:190px; size:1">
 				<p>Comprador</p>
 			</div>
-			<div style="float: left; width: 20%; margin-left:120px; text-align: left;">
+			<div style="float: left; width: 20%; padding-top:25px; margin-left:120px; text-align: left;">
 				<hr style="align:center; width:190px; size:1">
 				<p>Coordenador</p>
 			</div>
-			<div style="float: left; width: 20%; margin-left:120px; text-align: left;">
+			<div style="float: left; width: 20%; padding-top:25px; margin-left:120px; text-align: left;">
 				<hr style="align:center; width:190px; size:1">
 				<p style="align:center;">Diretor de Vendas</p>
 			</div>
@@ -235,6 +250,8 @@ A Partes elegem o foro da comarca da cidade de São Paulo, com exclusão de qual
 mais privilegiado. Estas Condições Gerais de Compra são regidas exclusivamente pelas Leis brasileiras.</p>
 			</div>
 
+			
+
 	</body>
 	<style>
 		.page-footer{
@@ -262,21 +279,15 @@ mais privilegiado. Estas Condições Gerais de Compra são regidas exclusivament
 		}
 
 		.empresa {
-			float: left;	
-			height: 100px;
-			width: 50%;
-			font-family: arial, sans-serif;			
-			text-align: left;
+			
 		}
 		
 
 		table {
-			margin-top: 5px;
 			font-family: arial, sans-serif;
 			text-align: center;
 			border-collapse: collapse;
 			width: 100%;
-			margin-top: 40px;
 		}
 
 		td,
@@ -301,5 +312,24 @@ mais privilegiado. Estas Condições Gerais de Compra são regidas exclusivament
 			text-align: center;
 			border-style: solid;
 		}
+
+		.teste {
+			background:#333;
+			width:450px;
+			margin: auto;
+			padding:10px;
+			text-align:center;
+		}
+
+		.empresa {
+			float: left;	
+			height: 100px;
+			width: 50%;
+			font-family: arial, sans-serif;			
+			text-align: left;
+		}
+
+
+		
 
 	</style>

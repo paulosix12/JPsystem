@@ -7,20 +7,39 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                 <form action="/Pedidos/Adicionar/Novo" method="POST">    
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                <div class="row">
                 <div class="col-md-3 mb-3">
                     <label >Selecione o cliente</label>
                     <select class="form-control" name="cliente">
                         @foreach($clientes as $c)<option value="{{$c->cliente}}">{{$c->cliente}}</option>@endforeach
                     </select>                  
                 </div>
+                
+                <div class="col-md-3 mb-3">
+                <label >Selecione o fornecedor</label>
+                    <select class="form-control" name="fornecedor">
+                        @foreach($fornecedores as $f)<option value="{{$f->fornecedor}}">{{$f->fornecedor}}</option>@endforeach
+                    </select>
+                </div>
+                
                 <div class="col-md-3 mb-3">
                     <label>Selecione o Projeto</label>
                     <input type="text" id="projeto" name="projeto" class="form-control" >                    
                 </div>
+                
                 <div class="col-md-3 mb-3">
-                        <label>Total</label>
-                        <input type="text" id="totalFinal" name="totalFinal" class="form-control" disabled>                    
-                    </div>
+                    <label>Forma de pagamento</label>
+                    <input type="text" id="pagamento" name="pagamento" class="form-control" >                    
+                </div>
+            </div>
+                
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                    <label >Condição de pagamento</label>
+                    <select class="form-control" name="condicao">
+                        @foreach($condicao as $c)<option value="{{ $c }}">{{ $c }}</option>@endforeach
+                    </select>
+                </div>
                 <table class="table m-0" classe="order-list" id="products-table">
 					<thead>
 						<tr>
