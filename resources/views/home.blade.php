@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Voce ja esta logado !!!
+                    <a href="/">Voltar</a> 
                 </div>
             </div>
         </div>
