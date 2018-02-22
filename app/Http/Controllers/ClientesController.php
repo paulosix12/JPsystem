@@ -21,7 +21,7 @@ class ClientesController extends Controller
     }
 
     function Visualizar(){
-      $clientes = ClientesModel::simplePaginate(10);
+      $clientes = ClientesModel::paginate(10);
       return view('Clientes/verClientes')->with('clientes', $clientes);
     }
 

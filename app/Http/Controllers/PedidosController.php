@@ -86,7 +86,7 @@ class PedidosController extends Controller{
     }
 
     function Visualizar(){
-      $pedidos = Pedidos::simplePaginate(10);
+      $pedidos = Pedidos::paginate(10);
       return view('Pedidos/verPedidos')->with('pedidos', $pedidos);
     }
 

@@ -22,7 +22,7 @@ class ProdutosController extends Controller
     }
 
     function Visualizar(){
-        $produtos = produtos::simplePaginate(10);
+        $produtos = produtos::paginate(10);
         return view('Produtos/verProdutos')->with('produtos', $produtos);
     }
 
@@ -30,7 +30,7 @@ class ProdutosController extends Controller
       $id = Request::route('id');
       $produtos = produtos::find($id);
       $produtos->delete();
-      return redirect('Produtos/verProdutos');
+      return redirect('Produtos/Visualizar');
     }
 
     public function Atualizar(){
