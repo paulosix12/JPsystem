@@ -74,26 +74,25 @@
 		</div>
 
 			<div>
-				<p class="info" style="width:100%;">Horario de Recebimento das 8:00 as 16:00 (Exeto Feriado).<b> Enviar nota fiscas e boletos em XML para financeiro@jpsolucoeseletricas.com.br</b>antes da efetivação da entrega.<b style="color: red;"> Por gentiza informar em toda as notas fiscais o número do pedido de compra, caso contrario
-					o mesmo sera recusado</b></p>
+				<p class="info" style="width:100%;">Horário de Recebimento das 8:00 ás 16:00 horas (Exceto Feriado).<b> Enviar notas fiscais e boletos em XML para financeiro@jpsolucoeseletricas.com.br antes da efetivação da entrega.</b></p>
+				<p style="color: red;">Por gentileza informar em todas as notas fiscais o número do pedido de compra, caso contrário o mesmo será recusado.</p>
 			</div>
 		
-			<div style="float: left; width: 20%; padding-top:25px; margin-left:0px text-align: left;">
+			<div style="float: left; width: 23%; padding-top:25px; margin-left:0px text-align: left;">
 				<hr style="align:center; width:190px; size:1">
 				<p>Comprador</p>
 			</div>
-			<div style="float: left; width: 20%; padding-top:25px; margin-left:120px; text-align: left;">
+			<div style="float: left; width: 23%; padding-top:25px; margin-left:120px; text-align: left;">
 				<hr style="align:center; width:190px; size:1">
 				<p>Coordenador</p>
 			</div>
-			<div style="float: left; width: 20%; padding-top:25px; margin-left:120px; text-align: left;">
+			<div style="float: left; width: 23%; padding-top:25px; margin-left:120px; text-align: left;">
 				<hr style="align:center; width:190px; size:1">
 				<p>Diretor de Vendas</p>
 			</div>
 			</div>
-			<div style="width: 100%; padding-top:10px; text-align: justify;">
-				<h5>Condições de Compra</h5>
-					<p style="font-size: 10px;">Artigo 1º - Da Aceitação das Condições de Compra
+			<div style="width: 100%; font-size: 10px; text-align: justify;">
+				<b>Condições de Compra</b> - Artigo 1º - Da Aceitação das Condições de Compra
 Estas Condições Gerais de Compra devem se aplicar a todos os PEDIDOS (de fornecimento de
 produtos ou prestação de serviço) feitos à CONTRATADA (fornecedor ou prestador de serviço)
 pela JPsolutions.
