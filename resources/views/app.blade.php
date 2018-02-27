@@ -141,17 +141,12 @@
                     <a href="#"><i class="fa fa-pencil-square-o  fa-fw"></i> Relatorios<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Relatorios/Visualizar">Visualizar</a>
+                            <a href="/Relatorios/Visualizar/Clientes">Clientes</a>
+                            <a href="/Relatorios/Visualizar/Fornecedor">Fornecedor</a>
+                            <a href="/Relatorios/Visualizar/Maquinas">Maquinas</a>
                         </li>
                     </ul>
                 </li>
-                
-                        
-                <!-- BUG Report -->
-                            <li>
-                                <a href="forms.html"><i class="fa-bug fa-fw"></i> Bug Report</a>
-                            </li>
-
 
                             
                         </ul>

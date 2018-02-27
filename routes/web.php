@@ -56,6 +56,8 @@ Route::group(['prefix' => 'Clientes',  'middleware' => 'auth'], function () {
     Route::post('Adicionar/Novo', 'ClientesController@Novo');
     Route::get('Adicionar', 'ClientesController@Adicionar');
     Route::get('Visualizar', 'ClientesController@Visualizar');
+    Route::get('Visualizar/Maquinas/{id}', 'ClientesController@visualizarMaquinas');
+    Route::post('Adicionar/Maquinas/Novo/{id}', 'ClientesController@adicionarMaquinas');
     Route::get('Deletar/{id}', 'ClientesController@Deletar');
     Route::get('Atualizar/{id}', 'ClientesController@Atualizar');
     Route::post('Atualizar/{id}', 'ClientesController@salvaAtualizar');
@@ -84,9 +86,10 @@ Route::group(['prefix' => 'Pedidos',  'middleware' => 'auth'], function () {
 */
 
 Route::group(['prefix' => 'Relatorios',  'middleware' => 'auth'], function () {
-    Route::get('Visualizar', 'RelatoriosController@Visualizar');
-    Route::post('Clientes', 'RelatoriosController@Clientes');
+    Route::get('Visualizar/Fornecedor', 'RelatoriosController@VisualizarFornecedores');
+    Route::get('Visualizar/Clientes', 'RelatoriosController@VisualizarClientes');
+    Route::get('Visualizar/Maquinas', 'RelatoriosController@VisualizarMaquinas');
     Route::post('Clientes', 'RelatoriosController@Clientes');
     Route::post('Fornecedor', 'RelatoriosController@Fornecedor');
-    Route::post('Fornecedor', 'RelatoriosController@Fornecedor');
+    Route::post('Maquinas', 'RelatoriosController@Maquinas');
 });

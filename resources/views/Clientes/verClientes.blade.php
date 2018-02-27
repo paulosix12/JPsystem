@@ -12,6 +12,7 @@
 							<th class="text-center">Cliente</th>
 							<th class="text-center">CNPJ</th>
 							<th class="text-center">Ver Dados</th>
+							<th class="text-center">Maquinas</th>
 							<th class="text-center">Editar</th>
 							<th class="text-center">Remover</th>
 						</tr>
@@ -52,6 +53,7 @@ Visualizar</button></td>
 								</div>
 							</div>
 			</div>
+			<td class="text-center"><a href="/Clientes/Visualizar/Maquinas/{{ $c->id }}"><button class="btn btn-success" type="submit"><i class="fa fa-tag" aria-hidden="true"></i> Maquinas</button></a></td>
 			<td class="text-center"><a href="/Clientes/Atualizar/{{ $c->id }}"><button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</button></a></td>
 			<td class="text-center"><a href="/Clientes/Deletar/{{ $c->id }}"><button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i>
 Apagar</button></a></td>

@@ -23,8 +23,10 @@
                 </div>
                 
                 <div class="col-md-3 mb-3">
-                    <label>Selecione o Projeto</label>
-                    <input type="text" id="projeto" name="projeto" class="form-control" >                    
+                    <label>Selecione a Maquina</label>
+                    <select class="form-control" name="projeto">
+                            @foreach($maquinas as $m)<option value="{{ $m->nomedamaquina }}">{{ $m->nomedamaquina }}</option>@endforeach
+                    </select>
                 </div>
                 
                 <div class="col-md-3 mb-3">

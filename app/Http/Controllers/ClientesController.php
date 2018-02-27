@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\ClientesModel;
+use App\maquinas;
 use Request;
 use Validator;
 use App\Http\Requests\ClienteRequest;
@@ -11,6 +12,23 @@ class ClientesController extends Controller
 {
     function Adicionar(){
 		return view('Clientes/addClientes');
+    }
+
+    function visualizarMaquinas(){
+      $id = Request::route('id');
+      $cliente = ClientesModel::find($id);
+      $Nomecliente = $cliente->cliente;    
+      $maquinas = maquinas::where('id', $id)->get();
+      //$maquinas = maquinas::all();
+      return view('Clientes/verMaquinas', compact('cliente','maquinas'));  
+    }
+
+
+    function adicionarMaquinas(){
+      $params = Request::all();
+      $maquina = new maquinas($params);
+      $maquina->save();
+      return redirect ('Clientes/Visualizar');  
     }
 
     function Novo(ClienteRequest $request){      
