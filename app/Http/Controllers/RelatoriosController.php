@@ -69,7 +69,7 @@ class RelatoriosController extends Controller
         
 
         $total = $tipoEletrico + $tipoMecanico + $tipoPneumatico + $tipoOutros; 
-        return view('/Relatorios/clienteVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros'));
+        return view('/Relatorios/clienteVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros','clientesVendas'));
     }
 
     Public function Maquinas (){
@@ -115,7 +115,7 @@ class RelatoriosController extends Controller
         
 
         $total = $tipoEletrico + $tipoMecanico + $tipoPneumatico + $tipoOutros; 
-        return view('/Relatorios/maquinasVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros'));
+        return view('/Relatorios/maquinasVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros','clientesVendas'));
     }
 
     Public function Fornecedor (){
@@ -160,7 +160,7 @@ class RelatoriosController extends Controller
         
 
         $total = $tipoEletrico + $tipoMecanico + $tipoPneumatico + $tipoOutros;
-        return view('/Relatorios/fornecedorVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros'));
+        return view('/Relatorios/fornecedorVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros','clientesVendas'));
          
          
        // return view('/Relatorios/clienteVendas', compact('id','total','tipoEletrico','tipoMecanico','tipoPneumatico','tipoOutros'));

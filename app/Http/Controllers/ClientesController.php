@@ -15,10 +15,10 @@ class ClientesController extends Controller
     }
 
     function visualizarMaquinas(){
-      $id = Request::route('id');
-      $cliente = ClientesModel::find($id);
+      $id = Request::route('id'); //12
+      $cliente = ClientesModel::find($id); //
       $Nomecliente = $cliente->cliente;    
-      $maquinas = maquinas::where('id', $id)->get();
+      $maquinas = maquinas::where('cliente', $Nomecliente)->orderBy('id')->paginate(15);
       //$maquinas = maquinas::all();
       return view('Clientes/verMaquinas', compact('cliente','maquinas'));  
     }

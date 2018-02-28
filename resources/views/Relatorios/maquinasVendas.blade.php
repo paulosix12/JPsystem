@@ -61,4 +61,32 @@
                   </div>
                 </div>
 
+                <table class="table table-striped ">
+                    <thead>
+                      <tr>
+                        <th class="text-center">Produto</th>
+                        <th class="text-center">Fornecedor</th>
+                        <th class="text-center">Maquina</th>
+                        <th class="text-center">Tipo do Produto</th>
+                        <th class="text-center">Quantidade</th>
+                        <th class="text-center">Preço</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Data</th>
+                      </tr>
+                    </thead>
+                    @foreach ($clientesVendas as $cv)
+                    <tbody>
+                      <tr>
+                        <td class="text-center">{{ $cv->produto }}</td>
+                        <td class="text-center">{{ $cv->fornecedor }}</td>
+                        <td class="text-center">{{ $cv->projeto }}</td>
+                        <td class="text-center">{{ $cv->tipoProduto }}</td>
+                        <td class="text-center">{{ $cv->preco }}</td>
+                        <td class="text-center">{{ $cv->quant }}</td>
+                        <td class="text-center">{{ $cv->total }}</td>
+                        <td class="text-center">{{ $cv->created_at }}</td>
+                      </tr>
+                    </tbody> 
+                    @endforeach
+
 @endsection

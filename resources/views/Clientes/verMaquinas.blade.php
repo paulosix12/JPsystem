@@ -54,6 +54,7 @@
                       <td class="text-center">{{ str_limit($m->descricao, 30) }}</td> 
                     </tr>
                     @endforeach
+                    {{$maquinas->links()}}
             </div>
             <!-- /.col-lg-12 -->
         </div>
