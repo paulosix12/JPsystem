@@ -110,7 +110,14 @@
                             <li>Tradução do sistema de login [FINALIZADO]</li>
                             <li>Correção dos link Ver Detalhes [FINALIZADO]</li>
                             <li>Edição dos pedido [ANDAMENTO]</li>
-                            <li>Enviar PDF via email [ANDAMENTO]</li>  
+                            <li>Enviar PDF via email [ANDAMENTO]</li>
+                            <li>Condição de compra, forma de pagamento e fornecedor adicionados no pdf [FINALIZADO]</li>
+                            <li>Adicionado a condição de pagamento [FINALIZADO]</li> 
+                            <li>Visualização de relatorios por data</li>
+                            <li>Adicionado a condição de pagamento [FINALIZADO]</li> 
+                            <li>Adição da aba Maquinas</li>
+                            <li>Adição da lista de produtos vendidos no relatorio </li> 
+                            <li>Adição do Botão de impressão</li> 
                         </div>
                         </div>
 
