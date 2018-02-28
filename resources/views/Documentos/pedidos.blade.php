@@ -46,8 +46,8 @@
 						<tr>
 							<th>Item</th>
 							<th>Produto</th>
-							<th>Valor(Un)</th>
 							<th>Quantidade</th>
+							<th>Valor(Un)</th>
 							<th>Total(R$)</th>
 							<th>IPI(%)</th>
 							<th>Entrega (Dias)</th>
