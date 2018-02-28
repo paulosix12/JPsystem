@@ -5,6 +5,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Relação de gastos com a maquina: {{ $id }}</h1>
+                <form>
+                    <button class="form-control" type="button" onClick="window.print()"/><i class="fa fa-print"></i>
+                    Imprimir</button>
+                  </form>
+                  <br/>
                 <div class="col-lg-3">
                   <div class="panel panel-default">
                     <div class="panel-heading">
