@@ -38,10 +38,11 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                     <label >Condição de pagamento</label>
-                    <select class="form-control" name="condicao">
-                        @foreach($condicao as $c)<option value="{{ $c }}">{{ $c }}</option>@endforeach
-                    </select>
+                    <input class="form-control" list="condicoes" name="condicao">
                 </div>
+                <datalist id="condicoes">
+                        @foreach($condicao as $c)<option value="{{ $c }}">@endforeach
+                  </datalist>
                 <table class="table m-0" classe="order-list" id="products-table">
 					<thead>
 						<tr>
