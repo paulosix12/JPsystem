@@ -9,7 +9,7 @@
 			<div class="box1">
 				<!-- Bootstrap Core CSS -->
 				<img src="http://jpsolutions.com.br/images/LogoMarca_JP_Solucoes.png" width="250" height="100" alt="">
-				<p>Sumaré - São Paulo {{ date('d/m/y') }}</p>
+				<p>Sumaré - São Paulo {{ date_format($data, "d/m/Y") }}</p>
 			</div>
 			<div class="box2">
 				<p>CNPJ: 21.733.083./0001-06</p>

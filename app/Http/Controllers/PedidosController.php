@@ -101,6 +101,8 @@ class PedidosController extends Controller{
       
       $projeto = $pedido->projeto;
 
+      $data = $pedido->created_at;
+
       $pagamento = $pedido->pagamento;
 
       $condicao = $pedido->condicao;
@@ -128,17 +130,18 @@ class PedidosController extends Controller{
       $cliente = ClientesModel::where("cliente", $pedido->clientes)->first();
       $fornecedor = fornecedores::where("fornecedor", $pedido->fornecedor)->first();
 
+      $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'pagamento', 'condicao', 'projeto','data', 'fornecedor', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
+      //$pdf->save(storage_path('pedidos/' . $projeto . $numero . '.pdf'));
+
       if($tipo == 1){
-        $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'pagamento', 'condicao', 'projeto', 'fornecedor', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
         return $pdf->download($projeto . $numero . '.pdf');
       }
 
       if($tipo == 2){
-        return view('Documentos/pedidos', compact('cliente', 'pagamento', 'condicao', 'projeto', 'fornecedor', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
+        return view('Documentos/pedidos', compact('cliente', 'pagamento', 'condicao', 'projeto','data', 'fornecedor', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
       }
 
       if($tipo == 3){
-        $pdf = PDF::loadView('Documentos/pedidos', compact('cliente', 'pagamento', 'condicao', 'projeto', 'fornecedor', 'produtolimpo','numero', 'precolimpo', 'quantlimpo', 'ipilimpo','entregalimpo' , 'totallimpo', 'loop'));
         return $pdf->stream('document2.pdf');
       }
     
