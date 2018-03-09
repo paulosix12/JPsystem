@@ -47,8 +47,8 @@ class PedidosController extends Controller{
     $entregalimpo = implode(' | ', $entrega);
     
     $total = $collection['total'];
-    $totallimpo = implode(' | ', $total);
-    
+    $totalajs = str_replace(",","",$total);
+    $totallimpo = implode(' | ', $totalajs);
         
     $pedido = array('clientes' => "$clientes", 'pagamento' =>"$pagamento", 'fornecedor' =>"$fornecedor", 'projeto' => "$projeto", 'produto' => "$produtolimpo", 'preco' => "$precolimpo", 'entrega' => "$entregalimpo", 'quant' => "$quantlimpo", 'ipi' => "$ipilimpo", 'total' => "$totallimpo", 'condicao' => "$condicao");
     $pedidoFinal = new Pedidos($pedido);

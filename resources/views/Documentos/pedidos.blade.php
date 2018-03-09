@@ -59,7 +59,7 @@
 							<td style="width: 250px;">{{  $produtolimpo[$i]  }}</td>
 							<td>{{  $precolimpo[$i]  }}</td>
 							<td>{{  $quantlimpo[$i]  }}</td>
-							<td>R$ {{  $totallimpo[$i]  }}</td>
+							<td>R$ {{ number_format((float)$totallimpo[$i], 2, ',', '.') }}</td>
 							<td>{{  $ipilimpo[$i]  }}%</td>
 							<td>{{ $entregalimpo[$i] }}</td>
 						</tr>
@@ -70,7 +70,7 @@
 				<p>Condicão de Pagamento:{{ $condicao }}</p>
 		</div>
 		<div style="width:100%; height:20px;">
-				<h4 style="text-align: center; width:200px; float:right;  border-style: solid;"><b>Valor Total:</b> {{ number_format((float)array_sum($totallimpo), 2, '.', '') }} R$</h4>
+				<h4 style="text-align: center; width:200px; float:right;  border-style: solid;"><b>Valor Total:</b> {{ number_format((float)array_sum($totallimpo), 2, ',', '.') }} R$</h4>
 		</div>
 
 			<div>

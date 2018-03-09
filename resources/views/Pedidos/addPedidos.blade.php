@@ -127,7 +127,7 @@ function calculateRow(row) {
     //substitui ponto por virgula
     //tot=tot.replace(".", ",");
     //a regex abaixo coloca um ponto a esquerda de cada grupo de 3 digitos desde que não seja no inicio do numero
-    row.find('.total').val((tot).replace(/\B(?=(\d{3})+(?!\d))/g, "."));     
+    row.find('.total').val((tot).replace(/\B(?=(\d{3})+(?!\d))/g, ","));     
 }
 
 </script>
