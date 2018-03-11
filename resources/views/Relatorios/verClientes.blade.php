@@ -5,21 +5,27 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Relatorio por Cliente</h1>
-                <form class="form-inline" action="/Relatorios/Clientes" method="post">
-                    <div class="form-group">
-                        <div class="well">
-                        <label>Buscar por Cliente:</label>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                            <select class="form-control" name="clientes" id="clientes">
-                              @foreach($clientes as $c)<option value="{{ $c->cliente }}">{{ $c->cliente }}</option> @endforeach
-                            </select>
-                            <label>Iniciando em: </label>
+                <form class="form" action="/Relatorios/Clientes" method="post">
+                            <div class="form-group">
+                            <div class="col-lg-12">
+                                <label>Buscar por Cliente:</label>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                <select class="form-control" name="clientes" id="clientes">@foreach($clientes as $c)<option value="{{ $c->cliente }}">{{ $c->cliente }}</option> @endforeach</select>
+                            </div>
+                            <div class="col-lg-5">
+                                <label>Iniciando em: </label>
                                 <input class="form-control"  id="from" name="from">
-                            <label for="sel1">Até:</label>
-                                <input class="form-control"  id="to" name="to">
-                    <button type="submit" class="btn btn-success">Buscar</button>
-                </div>
-            </div>
+                            </div>
+                            <div class="col-lg-5">
+                                    <label for="sel1">Até:</label>
+                                    <input class="form-control"  id="to" name="to">
+                            </div>
+                            <div class="col-lg-12">
+                                </br><hr>
+                                <button type="submit" class="btn btn-success">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
                 
 

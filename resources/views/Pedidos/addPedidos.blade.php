@@ -10,7 +10,7 @@
                 <div class="row">
                 <div class="col-md-3 mb-3">
                     <label >Selecione o cliente</label>
-                    <select class="form-control" name="cliente">
+                    <select class="form-control" name="cliente" id="cliente">
                         @foreach($clientes as $c)<option value="{{$c->cliente}}">{{$c->cliente}}</option>@endforeach
                     </select>                  
                 </div>
@@ -24,8 +24,8 @@
                 
                 <div class="col-md-3 mb-3">
                     <label>Selecione a Maquina</label>
-                    <select class="form-control" name="projeto">
-                            @foreach($maquinas as $m)<option value="{{ $m->nomedamaquina }}">{{ $m->nomedamaquina }}</option>@endforeach
+                    <select class="form-control" name="projeto" id="projeto">
+                        <option value="">--- Select State ---</option>
                     </select>
                 </div>
                 
@@ -84,7 +84,23 @@
 
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script>
+        $('#cliente').on('change', function(e){
+            console.log(e);
+            var cliente = e.target.value;
+    
+            $.get('{{ url('information') }}/create/ajax-state?cliente=' + cliente, function(data) {
+                console.log(data);
+                $('#projeto').empty();
+                $.each(data, function(index,subCatObj){
+                    $('#projeto').append('<option>'+subCatObj.nomedamaquina+'</option>');
+                });
+            });
+        });
+</script>
 <script type="text/javascript">
+
+
 
 $(document).ready(function () {
     var contador = 0;

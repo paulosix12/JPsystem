@@ -1,4 +1,5 @@
 <?php
+ 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ Route::get('/', 'HomeController@dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@logout')->middleware('auth');
 
-
+Route::get('/information/create/ajax-state', 'RelatoriosController@AjaxController');
 
 /*
 |--------------------------------------------------------------------------

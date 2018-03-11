@@ -8,6 +8,7 @@ use App\produtos;
 use App\maquinas;
 use App\vendas;
 use Request;
+use DB;
 
 class RelatoriosController extends Controller
 {
@@ -22,8 +23,15 @@ class RelatoriosController extends Controller
     }
 
     Public function VisualizarMaquinas (){
-        $maquinas = maquinas::all();        
-        return view('/Relatorios/verMaquinas', compact('maquinas'));
+        $maquinas = maquinas::all();
+        $clientes = ClientesModel::all();           
+        return view('/Relatorios/verMaquinas', compact('maquinas','clientes'));
+    }
+
+    Public function AjaxController (){
+    $cliente = request::all();
+    $subcategories = DB::table('maquinas')->where('cliente', $cliente)->select('nomedamaquina')->get();
+    return $subcategories;
     }
 
     Public function Clientes (){

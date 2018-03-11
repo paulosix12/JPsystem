@@ -4,22 +4,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Relatorios por Fornecedor</h1>
-            
-                <form class="form-inline" action="/Relatorios/Fornecedor" method="post">
-                    <div class="form-group">
-                        <div class="well">
-                        <label for="sel1">Gastos com Fornecedor:</label>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>                        
-                            <select class="form-control" name="fornecedores" id="fornecedores">
-                              @foreach($fornecedores as $f)<option value="{{ $f->fornecedor }}">{{ $f->fornecedor }}</option> @endforeach
-                            </select>
+                <h1 class="page-header">Relatorio por Fornecedor</h1>
+                <form class="form" action="/Relatorios/Fornecedor" method="post">
+                        <div class="form-group">
+                        <div class="col-lg-12">
+                                <label>Gastos com Fornecedor:</label>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}"/>                        
+                                <select class="form-control" name="fornecedores" id="fornecedores">@foreach($fornecedores as $f)<option value="{{ $f->fornecedor }}">{{ $f->fornecedor }}</option> @endforeach</select>
+                            </div>
+                        <div class="col-lg-5">
                             <label>Iniciando em: </label>
-                              <input class="form-control"  id="from" name="from">
-                            <label for="sel1">Até:</label>
-                              <input class="form-control"  id="to" name="to">
-                    <button type="submit" class="btn btn-success">Buscar</button>
-                </div>  
+                            <input class="form-control"  id="from" name="from">
+                        </div>
+                        <div class="col-lg-5">
+                            <label>Até:</label>
+                            <input class="form-control"  id="to" name="to">
+                        </div>
+                        <div class="col-lg-12">
+                            </br><hr>
+                            <button type="submit" class="btn btn-success">Buscar</button>
+                        </div>  
                 </div>
               </form>
 

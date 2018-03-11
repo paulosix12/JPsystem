@@ -118,6 +118,8 @@
                             <li>Adição da aba Maquinas</li>
                             <li>Adição da lista de produtos vendidos no relatorio </li> 
                             <li>Adição do Botão de impressão</li> 
+                            <li>Alteração no aba relatorios</li> 
+                            <li>Carregamento das maquinas de acordo com o cliente</li> 
                         </div>
                         </div>
 
