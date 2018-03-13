@@ -75,6 +75,12 @@ class PedidosController extends Controller{
     $id = Request::route('id');
     $produtos = Pedidos::find($id);
     $produtos->delete();
+
+    //Deleta da tabela vendas o pedido já existente
+    $id = $id + 2000;
+    $vendas = vendas::where('numero', $id)->delete();
+
+
     return redirect('/Pedidos/Visualizar');
   }
 
