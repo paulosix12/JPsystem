@@ -75,7 +75,7 @@
 
 			<div>
 				<p class="info" style="width:100%;">Horário de Recebimento das 8:00 ás 16:00 horas (Exceto Feriado).<b> Enviar notas fiscais e boletos em XML para financeiro@jpsolucoeseletricas.com.br antes da efetivação da entrega.</b></p>
-				<p style="color: red;">Por gentileza informar em todas as notas fiscais o número do pedido de compra, caso contrário o mesmo será recusado.</p>
+				<p style="color: red;">1 - Por gentileza informar em todas as notas fiscais o número do pedido de compra, caso contrário o mesmo será recusado. 2 - A JP Automação não autoriza operações com FACTORING e ou DESCONTO DUPLICATAS. </p>
 			</div>
 		
 			<div style="float: left; width: 23%; padding-top:25px; margin-left:0px text-align: left;">

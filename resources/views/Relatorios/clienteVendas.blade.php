@@ -69,6 +69,7 @@
                 <table class="table table-striped ">
                   <thead>
                     <tr>
+                      <th class="text-center">Pedido</th>
                       <th class="text-center">Produto</th>
                       <th class="text-center">Fornecedor</th>
                       <th class="text-center">Maquina</th>
@@ -82,6 +83,7 @@
                   @foreach ($clientesVendas as $cv)
                   <tbody>
                     <tr>
+                      <td class="text-center">{{ $cv->numero }}</td>
                       <td class="text-center">{{ $cv->produto }}</td>
                       <td class="text-center">{{ $cv->fornecedor }}</td>
                       <td class="text-center">{{ $cv->projeto }}</td>
