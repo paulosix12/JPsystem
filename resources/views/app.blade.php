@@ -135,8 +135,21 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-                <!-- Pedidos Menu -->
+                
+                <!-- Financeiro Menu -->
+                            <li>
+                                <a href="#"><i class="fa fa-credit-card fa-fw"></i> Financeiro<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="/Financeiro/Selecionar"> Insumos</a>
+                                    </li>
+                                    <li>
+                                            <a href="/Financeiro/Adicionar"> Adicionar insumo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                
+                <!-- Relatorios Menu -->
                 <li>
                     <a href="#"><i class="fa fa-pencil-square-o  fa-fw"></i> Relatorios<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">

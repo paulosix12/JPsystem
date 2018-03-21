@@ -20,7 +20,7 @@ Route::get('/information/create/ajax-state', 'RelatoriosController@AjaxControlle
 
 /*
 |--------------------------------------------------------------------------
-| Rotas Prefixadas para o home 
+| Rotas Prefixadas para o Fornecedores 
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix' => 'Fornecedores',  'middleware' => 'auth'], function () {
@@ -47,6 +47,23 @@ Route::group(['prefix' => 'Produtos',  'middleware' => 'auth'], function () {
     Route::get('Atualizar/{id}', 'ProdutosController@Atualizar');
     Route::post('Atualizar/{id}', 'ProdutosController@salvaAtualizar');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Rotas Prefixadas Com Financeiro
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix' => 'Financeiro',  'middleware' => 'auth'], function () {
+    Route::get('Selecionar', 'FinanceiroController@Selecionar');
+    Route::get('Visualizar', 'FinanceiroController@Visualizar');    
+    Route::get('Adicionar', 'FinanceiroController@Adicionar');        
+    Route::post('Adicionar/Novo', 'FinanceiroController@Novo');
+    Route::post('Relatorios', 'FinanceiroController@Relatorios');
+    
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Rotas Prefixadas Com Clientes
@@ -66,7 +83,7 @@ Route::group(['prefix' => 'Clientes',  'middleware' => 'auth'], function () {
 
 /*
 |--------------------------------------------------------------------------
-| Rotas Prefixadas Com Clientes
+| Rotas Prefixadas Com Pedidos
 |--------------------------------------------------------------------------
 */
 
@@ -82,7 +99,7 @@ Route::group(['prefix' => 'Pedidos',  'middleware' => 'auth'], function () {
 
 /*
 |--------------------------------------------------------------------------
-| Rotas Prefixadas Com Clientes
+| Rotas Prefixadas Com Relatorios
 |--------------------------------------------------------------------------
 */
 
