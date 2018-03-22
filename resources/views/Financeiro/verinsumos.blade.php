@@ -15,9 +15,8 @@
                 </br>
                 <h1 class="page-header">Visualizar Insumos</h1>
               <div class="row">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                 <p><b>Maquina:</b>{{ $maquinas }} </p>
-              <div class="col-md-12 mb-3">
+                   <div class="col-md-12 mb-3">
                     <table class="table table-striped ">
                             <thead>
                               <tr>
@@ -31,28 +30,31 @@
                                 <th class="text-center">Outros</th>
                               </tr>
                             </thead>
-                            <tr>
-                                @foreach($insumos as $in)
-                                <td class="text-center"> {{ $in->id }}</td>
-                                <td class="text-center"> {{ $in->data }}</td>
-                                <td class="text-center"> {{ $in->colaborador }}</td>
-                                <td class="text-center"> {{ $in->combustivel }}</td>
-                                <td class="text-center"> {{ $in->pedagio }}</td>
-                                <td class="text-center"> {{ $in->alimentacao }}</td>
-                                <td class="text-center"> {{ $in->hospedagem }}</td>
-                                <td class="text-center"> {{ $in->outros }}</td>
-                            </tr>   
-                            <tr>
-                                    <td class="text-center"> Total</td>
-                                    <td class="text-center"> -----</td>
-                                    <td class="text-center"> -----</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                            </tr>   
-                                @endforeach
+                            <tbody>                     
+                                @for ($i = 0; $i < $rodar; $i++)                                  
+                                <tr>
+                                  <td class="text-center">{{ $array_id[$i] }}</td>
+                                  <td class="text-center">{{ $array_data[$i] }}</td>
+                                  <td class="text-center">{{ $array_colaborador[$i] }}</td>
+                                  <td class="text-center">{{ $array_combustivel[$i] }}</td>
+                                  <td class="text-center">{{ $array_pedagio[$i] }}</td>
+                                  <td class="text-center">{{ $array_alimentacao[$i] }}</td>
+                                  <td class="text-center">{{ $array_hospedagem[$i] }}</td>
+                                  <td class="text-center">{{ $array_outros[$i] }}</td>
+                                </tr>
+                                @endfor
+                                <tr>
+                                    <td class="text-center"><b>Total</b></td>
+                                    <td class="text-center"><b> --- </b></td>
+                                    <td class="text-center"><b> --- </b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_combustivel)) }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_pedagio)) }} </b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_alimentacao)) }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_hospedagem)) }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_outros)) }}</b></td>
+                                  </tr>
+                              </tr>
+                            <tbody>
                         </table>
               </div> 
              

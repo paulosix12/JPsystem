@@ -38,7 +38,7 @@
 
                         <div class="col-md-2">
                             <label>Combustivel</label>
-                            <input type="text" id="combustivel" class="form-control" >
+                            <input type="text" id="combustivel" name="combustivel" class="form-control" >
                         </div>
 
                         <div class="col-md-3">
@@ -69,9 +69,11 @@
 
               
 
-                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
                 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                <script type="text/javascript" src="{{ URL::asset('js/jquery.maskMoney.js') }}"></script>                
                 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
                 <script>
                         $('#cliente').on('change', function(e){
                             console.log(e);
@@ -102,6 +104,16 @@
                         }); 
 
                     } );
+                </script>
+
+                <script>
+                    j (function() {
+                      j("#combustivel").maskMoney({prefix:'R$ ', allowZero:true ,allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+                      j("#pedagio").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+                      j("#alimentacao").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+                      j("#hospedagem").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+                      j("#outros").maskMoney({prefix:'R$ ',allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+                    })
                 </script>
 
             </div>
