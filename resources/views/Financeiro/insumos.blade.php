@@ -23,7 +23,7 @@
                         <label for="sel1">Gastos com a Maquina:</label>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>                        
                             <select class="form-control" name="maquinas" id="maquinas">
-                                <option value="">--- Select State ---</option>
+                                <option value="">--- Selecione Maquinas ---</option>
                             </select>
                         </div>
                         <div class="col-lg-5">

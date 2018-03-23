@@ -48,8 +48,13 @@ class FinanceiroController extends Controller
          $array_hospedagem[] = $in->hospedagem; 
          $array_outros[] = $in->outros;
       }
+      $validacao = isset($array_id);
+      //dd($validacao);
+      if($validacao == False){
+        return view ('Financeiro/seminsumos', compact('maquinas'));  
+      }
       $rodar = count($array_id);
-      return view ('Financeiro/verinsumos', compact('mensagem','i','maquinas' ,'array_id', 'rodar', 'array_data','array_colaborador','array_combustivel','array_pedagio','array_alimentacao','array_hospedagem','array_outros'));
+      return view ('Financeiro/verinsumos', compact('i','maquinas' ,'array_id', 'rodar', 'array_data','array_colaborador','array_combustivel','array_pedagio','array_alimentacao','array_hospedagem','array_outros'));
     }
 
     function Visualizar(){
