@@ -33,32 +33,34 @@
                     
                         <div class="col-md-5">
                             <label>Colaborador</label>
-                            <input type="text" id="colaborador" name="colaborador" class="form-control" >
+                            <select id="colaborador" name="colaborador" class="form-control" >
+                            @foreach($colaboradores as $colab)<option>{{ $colab->colaboradores }}</option>@endforeach
+                            </select>
                         </div>
 
                         <div class="col-md-2">
                             <label>Combustivel</label>
-                            <input type="text" id="combustivel" name="combustivel" class="form-control" >
+                            <input type="text" value="0,00" id="combustivel" name="combustivel" class="form-control" >
                         </div>
 
                         <div class="col-md-3">
                             <label>Pedagio</label>
-                            <input type="text" id="pedagio" name="pedagio" class="form-control" >
+                            <input type="text" value="0,00" id="pedagio" name="pedagio" class="form-control" >
                         </div>
 
                         <div class="col-md-2">
                             <label>Alimentação</label>
-                            <input type="text" id="alimentacao" name="alimentacao" class="form-control" >
+                            <input type="text" value="0,00" id="alimentacao" name="alimentacao" class="form-control" >
                         </div>
                         
                         <div class="col-md-2">
                             <label>Hospedagem</label>
-                            <input type="text" id="hospedagem" name="hospedagem" class="form-control" >
+                            <input type="text" value="0,00" id="hospedagem" name="hospedagem" class="form-control" >
                         </div>
 
                         <div class="col-md-2">
                             <label>Outros</label>
-                            <input type="text" id="outros" name="outros" class="form-control" >
+                            <input type="text" value="0,00"  id="outros" name="outros" class="form-control" >
                         </div>
 
                         <div class="col-lg-12">

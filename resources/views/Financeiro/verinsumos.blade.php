@@ -4,13 +4,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-            @foreach($errors->all() as $error)
-            <div class="alert alert-danger">
-              <ul>
-                <li>{{ $error }}</li>
-              </ul>
-              </div>
-            @endforeach
             </div>
                 </br>
                 <h1 class="page-header">Visualizar Insumos</h1>

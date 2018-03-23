@@ -6,13 +6,15 @@ use Request;
 use App\ClientesModel;
 use App\maquinas;
 use App\insumos;
+use App\colaboradores;
 
 class FinanceiroController extends Controller
 {
     function Adicionar(){
       $maquinas = maquinas::all();
-      $clientes = ClientesModel::all();  
-		return view('Financeiro/addinsumos', compact('maquinas','clientes'));
+      $clientes = ClientesModel::all();
+      $colaboradores = colaboradores::all();  
+		return view('Financeiro/addinsumos', compact('maquinas','clientes','colaboradores'));
     }
     
     function Selecionar(){
@@ -46,9 +48,8 @@ class FinanceiroController extends Controller
          $array_hospedagem[] = $in->hospedagem; 
          $array_outros[] = $in->outros;
       }
-      $rodar = count($array_id);  
-
-      return view ('Financeiro/verinsumos', compact('i','maquinas' ,'array_id', 'rodar', 'array_data','array_colaborador','array_combustivel','array_pedagio','array_alimentacao','array_hospedagem','array_outros'));
+      $rodar = count($array_id);
+      return view ('Financeiro/verinsumos', compact('mensagem','i','maquinas' ,'array_id', 'rodar', 'array_data','array_colaborador','array_combustivel','array_pedagio','array_alimentacao','array_hospedagem','array_outros'));
     }
 
     function Visualizar(){

@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class fornecedores extends Model
+class ddl extends Model
 {
-    protected $fillable = ['fornecedores'];
+    protected $fillable = ['ddl'];
     protected $guarded = ['id'];
-    protected $table = 'fornecedores';
+    protected $table = 'ddl';
     public $timestamps = false;    
 }

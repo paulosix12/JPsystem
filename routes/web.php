@@ -63,6 +63,13 @@ Route::group(['prefix' => 'Financeiro',  'middleware' => 'auth'], function () {
     
 });
 
+Route::group(['prefix' => 'Configuracoes',  'middleware' => 'auth'], function () {
+    Route::get('Config', 'ConfiguracoesController@index');
+    Route::get('Visualizar', 'ConfiguracoesController@Visualizar');    
+    Route::get('Adicionar', 'ConfiguracoesController@Adicionar');        
+    Route::post('Adicionar/Novoddl', 'ConfiguracoesController@Novoddl');
+    Route::post('Adicionar/NovoColab', 'ConfiguracoesController@NovoColab');    
+});
 
 /*
 |--------------------------------------------------------------------------

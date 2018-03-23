@@ -41,7 +41,7 @@
                     <input class="form-control" list="condicoes" name="condicao">
                 </div>
                 <datalist id="condicoes">
-                        @foreach($condicao as $c)<option value="{{ $c }}">@endforeach
+                        @foreach($condicao as $c)<option value="{{ $c->ddl }}">@endforeach
                   </datalist>
                 <table class="table m-0" classe="order-list" id="products-table">
 					<thead>

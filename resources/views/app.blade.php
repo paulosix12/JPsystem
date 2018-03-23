@@ -68,7 +68,9 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
-
+                                <li>
+                                    <a href="/Configuracoes/Config">Configurações</a>
+                                </li>
 
                         </ul>
                     </li>
