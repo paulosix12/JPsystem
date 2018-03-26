@@ -60,6 +60,8 @@ Route::group(['prefix' => 'Financeiro',  'middleware' => 'auth'], function () {
     Route::get('Adicionar', 'FinanceiroController@Adicionar');        
     Route::post('Adicionar/Novo', 'FinanceiroController@Novo');
     Route::post('Relatorios', 'FinanceiroController@Relatorios');
+    Route::get('Deletar/{id}', 'FinanceiroController@Deletar');
+    
     
 });
 

@@ -23,6 +23,13 @@ class FinanceiroController extends Controller
 		return view('Financeiro/insumos', compact('maquinas','clientes'));
     }
 
+    function Deletar(){
+      $id = Request::route('id');
+      $insumos = insumos::find($id);
+      $insumos->delete();
+      return redirect ('Financeiro/Selecionar');
+    }
+
     function Relatorios(){
       $params = Request::all();
       // Separação da Variaveis 

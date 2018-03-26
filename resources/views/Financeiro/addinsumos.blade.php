@@ -7,6 +7,7 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Insumo por Maquinas</h1>
             </div>
+            <div class="row">                
                 <div class="col-lg-12">
                     <form class="form" action="/Financeiro/Adicionar/Novo" method="post">
                     <div class="form-group">
@@ -17,15 +18,19 @@
                             @foreach($clientes as $c)<option value="{{ $c->cliente }}">{{ $c->cliente }}</option> @endforeach</select>
                 </div>
                 </div>
+            </div>
                     <div class="form-group">
+                        <div class="row">
                         <div class="col-lg-12">
                         <label for="sel1">Gastos com a Maquina:</label>
                             <select class="form-control" name="maquinas" id="maquinas">
                                 <option value="">--- Selecione a Maquina ---</option>
                             </select>
                         </div>
+                    </div>
                     </hr>
                         
+                    <div class="row">
                         <div class="col-md-2">
                             <label for="Data">Data</label>
                             <input type="text" id="data" name="data" class="form-control"  >
@@ -47,7 +52,9 @@
                             <label>Pedagio</label>
                             <input type="text" value="0,00" id="pedagio" name="pedagio" class="form-control" >
                         </div>
-
+                    
+                    </div>
+                    <div class="row">
                         <div class="col-md-2">
                             <label>Alimentação</label>
                             <input type="text" value="0,00" id="alimentacao" name="alimentacao" class="form-control" >
@@ -62,11 +69,12 @@
                             <label>Outros</label>
                             <input type="text" value="0,00"  id="outros" name="outros" class="form-control" >
                         </div>
-
+                    </div>
                         <div class="col-lg-12">
                             </br><hr>
                             <button type="submit" class="btn btn-success">Salvar</button>
                         </div>  
+                    
               </form>
 
               

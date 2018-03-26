@@ -21,6 +21,7 @@
                                 <th class="text-center">Alimentação</th>
                                 <th class="text-center">Hospedagem</th>
                                 <th class="text-center">Outros</th>
+                                <th class="text-center">Deletar</th>
                               </tr>
                             </thead>
                             <tbody>                     
@@ -34,6 +35,7 @@
                                   <td class="text-center">{{ $array_alimentacao[$i] }}</td>
                                   <td class="text-center">{{ $array_hospedagem[$i] }}</td>
                                   <td class="text-center">{{ $array_outros[$i] }}</td>
+                                  <td class="text-center"><a button class="btn btn-danger" href="/Financeiro/Deletar/{{ $array_id[$i] }}"><i class="fa fa-trash-o" aria-hidden="true"></button></td>
                                 </tr>
                                 @endfor
                                 <tr>
