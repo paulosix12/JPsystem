@@ -118,11 +118,11 @@
 
                 <script>
                     j (function() {
-                      j("#combustivel").maskMoney({prefix:'R$ ', allowZero:true ,allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
-                      j("#pedagio").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
-                      j("#alimentacao").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
-                      j("#hospedagem").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
-                      j("#outros").maskMoney({prefix:'R$ ',allowZero:true, allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+                      j("#combustivel").maskMoney({prefix:'R$ ', allowZero:true ,allowNegative: true, thousands:'.', decimal:'.', affixesStay: false});
+                      j("#pedagio").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:'.', affixesStay: false});
+                      j("#alimentacao").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:'.', affixesStay: false});
+                      j("#hospedagem").maskMoney({prefix:'R$ ', allowZero:true, allowNegative: true, thousands:'.', decimal:'.', affixesStay: false});
+                      j("#outros").maskMoney({prefix:'R$ ',allowZero:true, allowNegative: true, thousands:'.', decimal:'.', affixesStay: false});
                     })
                 </script>
 

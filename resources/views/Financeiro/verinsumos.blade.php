@@ -42,11 +42,11 @@
                                     <td class="text-center"><b>Total</b></td>
                                     <td class="text-center"><b> --- </b></td>
                                     <td class="text-center"><b> --- </b></td>
-                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_combustivel)) }}</b></td>
-                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_pedagio)) }} </b></td>
-                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_alimentacao)) }}</b></td>
-                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_hospedagem)) }}</b></td>
-                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_outros)) }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_combustivel), 2, '.', '') }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_pedagio), 2, '.', '') }} </b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_alimentacao), 2, '.', '' ) }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_hospedagem), 2, '.', '') }}</b></td>
+                                    <td class="text-center"><b>{{ number_format((float)array_sum($array_outros), 2, '.', '') }}</b></td>
                                   </tr>
                               </tr>
                             <tbody>
